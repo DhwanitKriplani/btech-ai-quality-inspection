@@ -1,0 +1,26 @@
+{
+  "model": "C:\\Users\\Dhwanit Kriplani\\OneDrive\\Documents\\ChatGPT\\btech project\\integrated_inspection\\models\\material_rgb_detector.pt",
+  "modality": "rgb",
+  "training_source": "MCubeS",
+  "task": "connected material-region bounding boxes",
+  "names": {
+    "0": "metal",
+    "1": "plastic",
+    "2": "wood"
+  },
+  "trained_epochs_requested": 40,
+  "run_directory": "C:\\Users\\Dhwanit Kriplani\\OneDrive\\Documents\\ChatGPT\\btech project\\integrated_inspection\\training\\material_rgb",
+  "held_out_test": {
+    "precision": 0.24331598496176676,
+    "recall": 0.16854817978356518,
+    "map50": 0.11757025663951742,
+    "map50_95": 0.05482806505872572,
+    "per_class_map50_95": {
+      "metal": 0.10829649298265501,
+      "plastic": 0.02268651066342674,
+      "wood": 0.033501191530095474
+    }
+  },
+  "weights_sha256": "2d39e7d58a59d107ff2a96cb0f90f238c942b35161609cbef4d5c11ffab2a969",
+  "limits": "Region boxes are not guaranteed physical object instances; user CCTV setup untested."
+}

@@ -1,0 +1,31 @@
+{
+  "unit_tests": 40,
+  "hardware_pi_tested": false,
+  "camera_opened": false,
+  "scenarios": {
+    "gpu_rgb": {
+      "regions": 3,
+      "defects": 1
+    },
+    "cpu_rgb": "passed",
+    "dual_five_models": "passed",
+    "observed_foreground_synthetic_fixture": "passed; not a hardware accuracy test",
+    "video": {
+      "decoded_frames": 2,
+      "jsonl_records": 2
+    }
+  },
+  "model_hashes_match": true,
+  "pi_wheels_verified": {
+    "python": "3.11",
+    "architecture": "aarch64",
+    "torch": "2.11.0",
+    "torchvision": "0.26.0"
+  },
+  "shell_syntax_checked": true,
+  "uploader_syntax_checked": true,
+  "original_code_model_hashes_unchanged": 96,
+  "menu_quit": "passed without camera access",
+  "target_pi": "Raspberry Pi5,4GB,64-bitBookworm,Python3.11",
+  "pi_hardware_tested": false
+}

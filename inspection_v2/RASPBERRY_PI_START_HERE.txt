@@ -1,0 +1,81 @@
+RASPBERRY PI 5 / 4 GB — START HERE
+
+TARGET
+Raspberry Pi OS 64-bit Bookworm, Python 3.11.
+The package was tested on this PC, not on your Pi. Pi speed, RAM use and
+camera compatibility still need a hardware test.
+
+1. COPY THE COMPLETE inspection_v2 FOLDER TO THE PI
+Keep models/, examples/ and the Python files together.
+Do not copy the PC's .venv or CUDA folders.
+An optional Windows uploader is included: UPLOAD_TO_PI.ps1.
+It asks for your actual user@Pi_IP and uses normal SSH authentication.
+
+2. OPEN A PI TERMINAL INSIDE inspection_v2 AND RUN
+
+   bash setup_pi.sh
+   bash start_pi.sh demo
+
+Setup needs internet and sudo for OS packages. It creates .venv_pi locally.
+The demo uses clearly marked TRAIN images to check software operation.
+Results appear in outputs/pi_demo_rgb and outputs/pi_demo_nir.
+
+3. CONFIGURE YOUR CAMERA IN pi_config.env
+
+   RGB_SOURCE=0
+   NIR_SOURCE=1
+
+Those are USB/video-capture indices; change them to the actual devices.
+For a supported CSI camera, use a source such as picamera2:0 instead.
+A 3.6 mm / 1080p CCTV description does not identify its connector. The
+module may need a compatible USB video-capture interface.
+
+SHOW=0 is the default for headless SSH use. Set SHOW=1 only with a Pi desktop.
+The 4 GB profile uses CPU mode, four threads and at most three material
+regions per frame. No Pi FPS or memory benchmark is claimed.
+
+4. RUN FIXED-CAMERA OBJECT BOXES + MATERIAL + RGB SCRATCH DETECTION
+
+   bash start_pi.sh fixed
+
+First remove all objects and press Enter to capture an EMPTY background.
+Then put the part in view. Object boxes come from observed pixel changes;
+material classification and the RGB aluminium defect model run together.
+Keep the camera and lighting unchanged. Stop with Ctrl+C when headless,
+or Q/Escape in the display window.
+
+To replace the reference after changing the setup:
+
+   .venv_pi/bin/python capture_background.py --source 0 --output references/background_rgb.png --headless --overwrite
+
+OTHER MODES
+
+   bash start_pi.sh rgb
+   bash start_pi.sh nir
+   bash start_pi.sh dual
+
+NIR mode runs material analysis; it does not apply RGB scratch weights to IR.
+Dual views stay separate unless a valid calibration.json is supplied.
+For CSI camera discovery, use: rpicam-hello --list-cameras
+
+CALIBRATION
+Use matching RGB and IR photos of the same plane and unchanged setup:
+
+   .venv_pi/bin/python calibrate_views.py --rgb rgb.png --nir nir.png --output calibration.json
+
+Interactive selection needs a desktop. For headless use, add --points with
+a JSON file containing rgb_points and nir_points (at least four matching,
+non-collinear points). Exact frame sizes and reprojection errors are checked.
+The cameras are not hardware-synchronized by this software.
+
+LIMITS
+Learned material-region boxes are still weak. Empty-background localization
+is a separate fixed-camera method and has not been tested on your camera.
+The scratch model is for RGB aluminium surfaces, not validated on IR/wood/plastic.
+Plastic classification is also weak on the public material data.
+No GPIO, sorting motor or conveyor commands are included.
+
+See MODEL_REPORT.md and AUDIT_CORRECTION.md for measured results.
+Official references:
+https://docs.ultralytics.com/guides/raspberry-pi/
+https://www.raspberrypi.com/documentation/computers/camera_software.html

@@ -1,0 +1,39 @@
+COMPLETE INSPECTION PACKAGE V2
+
+Pi 5 / 4 GB: RASPBERRY_PI_START_HERE.txt padho.
+PC: START_INSPECTION.bat par double-click karo.
+
+Is folder mein saare five model files aur ek integrated app hain:
+- Object/material bounding boxes aur material estimates.
+- RGB aluminium par scratch, corner aur side-defect boxes/masks.
+- Photo, video, live RGB/NIR aur dual-camera modes.
+- Fixed-camera ke liye empty-background object localization.
+- RGB-to-NIR planar calibration aur cross-view associations.
+- Annotated images/videos aur JSON reports.
+
+PC MENU
+1 RGB photo. 2 Fixed-camera inspection. 3 NIR photo. 4 Dual cameras.
+5 Included training-image demo. 6 Paired-view calibration.
+7 Empty background capture/update. 8 Experimental learned RGB live mode.
+
+FIXED-CAMERA WORKFLOW
+Option 2 select karo. Pehli baar saare objects hatao aur SPACE se EMPTY
+background save karo. Phir part rakho. Q/Escape se window band hogi.
+Camera/lighting badle toh option 7 se reference dobara capture karo.
+Foreground box ki koi fake model confidence nahi di jaati.
+
+MEASURED IMPROVEMENTS
+RGB classifier: FMD test accuracy 77.37% (106/137); old baseline 74.45%.
+Scratch model: 400 clean images, capture-group-separated splits.
+New 58-image test: boxes mAP50 97.28%, masks mAP50 93.86%.
+
+IMPORTANT
+Purane ~99% defect result ke test split mein 10/50 images train/validation
+se duplicate the. New clean report use karo; old model files preserve hain.
+Learned material boxes abhi weak hain: RGB mAP50 11.76%, NIR 9.86%.
+Fixed-camera foreground mode alag method hai; real camera par test baaki hai.
+Unknown materials aur automatic sorting decisions train nahi kiye gaye hain.
+Models ke scores measured accuracy nahi hain.
+
+Pi par training ki zaroorat nahi. Sirf package copy, setup aur run karna hai.
+Actual CCTV camera test aur physical RGB-IR calibration baaki hain.

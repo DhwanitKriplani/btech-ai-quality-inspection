@@ -1,0 +1,44 @@
+{
+  "modality": "nir",
+  "selection_metric": "validation mAP50-95 primary, no mAP50 regression; same GT/scene split and1024 eval",
+  "baseline_validation": {
+    "precision": 0.23104560928167994,
+    "recall": 0.2074746849628355,
+    "map50": 0.11076820180423541,
+    "map50_95": 0.04947269883112312,
+    "per_class_map50_95": {
+      "metal": 0.08033682860775693,
+      "plastic": 0.030121855046329804,
+      "wood": 0.03795941283928262
+    }
+  },
+  "candidate_validation": {
+    "precision": 0.2063176847938805,
+    "recall": 0.1742614262974831,
+    "map50": 0.11093404555993325,
+    "map50_95": 0.05233181032707134,
+    "per_class_map50_95": {
+      "metal": 0.09544955727824168,
+      "plastic": 0.030117888357462368,
+      "wood": 0.03142798534550994
+    }
+  },
+  "candidate_eligible": false,
+  "chosen_model": "C:\\Users\\Dhwanit Kriplani\\.codex\\visualizations\\2026\\10\\24\\01a16e09-1018-72e0-b04a-7ccfb41fd9c3\\material_improvement_2026-10-25\\baseline\\material_nir_detector.pt",
+  "candidate_model": "C:\\Users\\Dhwanit Kriplani\\.codex\\visualizations\\2026\\10\\24\\01a16e09-1018-72e0-b04a-7ccfb41fd9c3\\material_improvement_2026-10-25\\candidates\\material_nir_detector.pt",
+  "candidate_sha256": "b8449a768e9fc32220fddc30f8194f32255bb8c28118dd3940cf22e46c802eaa",
+  "train_configuration": {
+    "model": "YOLO11s",
+    "imgsz": 1024,
+    "epochs": 80,
+    "batch": 4,
+    "seed": 42,
+    "optimizer": "AdamW",
+    "mosaic": 0.5,
+    "scale": 0.3,
+    "cos_lr": true
+  },
+  "final_test": null,
+  "test_not_used_for_selection": true,
+  "notes": "Connected material-region labels unchanged; physical whole-object generalization still needs target camera labels."
+}

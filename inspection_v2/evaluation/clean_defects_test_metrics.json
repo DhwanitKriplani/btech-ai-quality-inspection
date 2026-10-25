@@ -1,0 +1,123 @@
+{
+  "box": {
+    "mAP50": 0.9727748313307348,
+    "mAP50_95": 0.6766312310817246
+  },
+  "mask": {
+    "mAP50": 0.9385917433566546,
+    "mAP50_95": 0.46358924077231817
+  },
+  "per_class": [
+    {
+      "class_id": 0,
+      "name": "Black Marker",
+      "role": "marker, not a physical defect",
+      "box": {
+        "precision": 1.0,
+        "recall": 0.8110083487089136,
+        "AP50": 0.9789097222222222,
+        "AP50_95": 0.7821973611261731
+      },
+      "mask": {
+        "precision": 0.9622449202973988,
+        "recall": 0.7723257601487219,
+        "AP50": 0.9006832646954431,
+        "AP50_95": 0.5021591212856763
+      }
+    },
+    {
+      "class_id": 1,
+      "name": "Corner Defect",
+      "role": "defect",
+      "box": {
+        "precision": 0.9223597655957729,
+        "recall": 0.9655172413793104,
+        "AP50": 0.944871794871795,
+        "AP50_95": 0.4801703039554062
+      },
+      "mask": {
+        "precision": 0.9306937151995468,
+        "recall": 0.9262637369315859,
+        "AP50": 0.9067716040765041,
+        "AP50_95": 0.305469078943699
+      }
+    },
+    {
+      "class_id": 2,
+      "name": "Side Defect",
+      "role": "defect",
+      "box": {
+        "precision": 0.9724181812516904,
+        "recall": 1.0,
+        "AP50": 0.995,
+        "AP50_95": 0.727188888888889
+      },
+      "mask": {
+        "precision": 0.9833341451029981,
+        "recall": 1.0,
+        "AP50": 0.995,
+        "AP50_95": 0.4860682539682539
+      }
+    },
+    {
+      "class_id": 3,
+      "name": "scratch",
+      "role": "defect",
+      "box": {
+        "precision": 0.9642765150121186,
+        "recall": 0.8767123287671232,
+        "AP50": 0.9723178082289222,
+        "AP50_95": 0.716968370356431
+      },
+      "mask": {
+        "precision": 0.9767080694002644,
+        "recall": 0.863013698630137,
+        "AP50": 0.9519121046546711,
+        "AP50_95": 0.5606605088916434
+      }
+    }
+  ],
+  "domain": "RGB aluminium surface defects",
+  "all_four_classes_included": true,
+  "marker_class_id": 0,
+  "test_split": {
+    "images": 58,
+    "groups": 10,
+    "instances": [
+      66,
+      29,
+      15,
+      73
+    ],
+    "images_with_class": [
+      51,
+      29,
+      15,
+      58
+    ],
+    "dates": {
+      "2023-06-22": 21,
+      "2023-06-25": 30,
+      "2023-06-24": 7
+    }
+  },
+  "new_grouped_split_not_original_test": true,
+  "original_source_files_sha256_unchanged": true,
+  "generic_initialization_sha256": "361fbfabab285c3237700b6bb91d7ecfa602cd945fffda8dbe1242829b71e73f",
+  "generic_checkpoint_unchanged": true,
+  "dataset_manifest_sha256": "2fe5ee7def2efce9f552e0b8ea22b5274efbc88988e67be9a22f951d1aaa5f5b",
+  "started_utc": "2026-10-25T06:49:01.410834+00:00",
+  "best_checkpoint": "C:\\Users\\Dhwanit Kriplani\\.codex\\visualizations\\2026\\10\\24\\01a16e09-1018-72e0-b04a-7ccfb41fd9c3\\material_improvement_2026-10-25\\defect_clean\\training\\clean_defects\\weights\\best.pt",
+  "candidate_checkpoint": "C:\\Users\\Dhwanit Kriplani\\.codex\\visualizations\\2026\\10\\24\\01a16e09-1018-72e0-b04a-7ccfb41fd9c3\\material_improvement_2026-10-25\\defect_clean\\models\\defect_detector_clean.pt",
+  "candidate_sha256": "998fbfc111f4846761bbe43e302417119a578fecc569ea1c45cea01bddd9689b",
+  "selection": "best validation fitness; no test predictions used for model selection",
+  "limitations": [
+    "Filename-time clusters are heuristic capture groups; actual physical-part IDs are unknown.",
+    "Same physical aluminium part may occur in different groups/dates; independence is not guaranteed.",
+    "New test split differs from original test; results are not directly comparable.",
+    "Generic COCO initialization is required; old custom defect weights already saw some new holdout photographs.",
+    "Conflicting-label exact-image families were excluded entirely; no mask was arbitrarily chosen.",
+    "No model predictions or AP were used to create or balance these splits."
+  ],
+  "scope": "Metrics apply to this new grouped held-out RGB aluminium split; not NIR/plastic/wood or a new sensor"
+}

@@ -1,0 +1,61 @@
+{
+  "version": 2,
+  "entry_windows": "START_INSPECTION.bat",
+  "entry_raspberry_pi": "bash start_pi.sh",
+  "target_pi": "Raspberry Pi5 4GB,64-bit Raspberry Pi OSBookworm,Python3.11",
+  "pi_hardware_tested": false,
+  "camera_hardware_tested": false,
+  "physical_calibration_supplied": false,
+  "models": {
+    "defect_detector": {
+      "file": "models/defect_detector.pt",
+      "bytes": 6618205,
+      "sha256": "998fbfc111f4846761bbe43e302417119a578fecc569ea1c45cea01bddd9689b",
+      "role": "Retrained RGB aluminium model using cleaned group-separated data"
+    },
+    "material_nir_classifier": {
+      "file": "models/material_nir_classifier.pt",
+      "bytes": 45079051,
+      "sha256": "42117b643aa24709c388a5299eed8cf8301689d32f5ae6566db287518952079f",
+      "role": "Original NIR classifier retained; rejected candidate was not better"
+    },
+    "material_nir_detector": {
+      "file": "models/material_nir_detector.pt",
+      "bytes": 5459333,
+      "sha256": "421554c18ce30a1c1c29856d37d1a3b3dabd5f91b373a523bef3551274174372",
+      "role": "Experimental NIR material-region detector retained"
+    },
+    "material_rgb_classifier": {
+      "file": "models/material_rgb_classifier.pt",
+      "bytes": 44805111,
+      "sha256": "e159c254ef23e677a3373fb745c264ebe1dcc40789822e6ccbf4c3e2f9bb9a87",
+      "role": "RGB+grayscale ensemble, selected on two validation domains"
+    },
+    "material_rgb_detector": {
+      "file": "models/material_rgb_detector.pt",
+      "bytes": 5459333,
+      "sha256": "2d39e7d58a59d107ff2a96cb0f90f238c942b35161609cbef4d5c11ffab2a969",
+      "role": "Experimental RGB material-region detector retained"
+    }
+  },
+  "localization_modes": [
+    "learned_material_regions_experimental",
+    "empty_background_observed_foreground_objects"
+  ],
+  "material_box_mAP50": {
+    "rgb": 0.11757025663951742,
+    "nir": 0.09855854191191667
+  },
+  "defect_grouped_test": {
+    "images": 58,
+    "capture_groups": 10,
+    "box_map50": 0.9727748313307348,
+    "mask_map50": 0.9385917433566546
+  },
+  "rgb_classification_test": {
+    "FMD137_accuracy": 0.7737226486206055,
+    "MCubeS455_accuracy": 0.7428571581840515
+  },
+  "old_project_models_unchanged": true,
+  "global_production_accuracy": null
+}

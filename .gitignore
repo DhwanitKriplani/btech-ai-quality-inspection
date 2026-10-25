@@ -21,3 +21,12 @@ Thumbs.db
 integrated_inspection/outputs/
 nir_material/outputs/
 *.log
+
+# V2 generated and machine-local files
+inspection_v2/.venv_pi/
+inspection_v2/.venv/
+inspection_v2/.runtime_cache/
+inspection_v2/outputs/
+inspection_v2/references/
+inspection_v2/runtime_path.txt
+inspection_v2/calibration.json

@@ -1,0 +1,145 @@
+{
+  "selection_frozen": true,
+  "decision_time_utc": "2026-10-25T06:47:08.065174+00:00",
+  "authorized_by": "root explicitly selected RGB alpha0.5 under declared validation guards",
+  "checkpoint": "C:\\Users\\Dhwanit Kriplani\\.codex\\visualizations\\2026\\10\\24\\01a16e09-1018-72e0-b04a-7ccfb41fd9c3\\material_improvement_2026-10-25\\classifiers\\candidate_rgb_ensemble_resnet18.pt",
+  "checkpoint_sha256": "e159c254ef23e677a3373fb745c264ebe1dcc40789822e6ccbf4c3e2f9bb9a87",
+  "rgb_weight": 0.5,
+  "gray_weight": 0.5,
+  "score_type": "uncalibrated weighted_softmax_average; no joint calibration",
+  "validation_counts": {
+    "mcubes": 293,
+    "fmd": 32
+  },
+  "validation_class_counts": {
+    "mcubes": [
+      186,
+      11,
+      96
+    ],
+    "fmd": [
+      11,
+      11,
+      10
+    ]
+  },
+  "guards": {
+    "fmd_metal_recall_minimum": 0.7181818127632141,
+    "fmd_macro_f1_minimum": 0.7924098777770996,
+    "mcubes_macro_f1_minimum": 0.40681221008300783
+  },
+  "selected_validation_metrics": {
+    "rgb_weight": 0.5,
+    "gray_weight": 0.5,
+    "validation": {
+      "mcubes": {
+        "accuracy": 0.744027316570282,
+        "macro_f1": 0.6104423403739929,
+        "unweighted_loss": 0.7119120359420776,
+        "confusion_matrix": [
+          [
+            138,
+            21,
+            27
+          ],
+          [
+            1,
+            6,
+            4
+          ],
+          [
+            19,
+            3,
+            74
+          ]
+        ],
+        "per_class": {
+          "metal": {
+            "precision": 0.8734177350997925,
+            "recall": 0.7419354915618896,
+            "f1": 0.8023256063461304,
+            "support": 186
+          },
+          "plastic": {
+            "precision": 0.20000000298023224,
+            "recall": 0.5454545617103577,
+            "f1": 0.292682945728302,
+            "support": 11
+          },
+          "wood": {
+            "precision": 0.7047619223594666,
+            "recall": 0.7708333134651184,
+            "f1": 0.7363184094429016,
+            "support": 96
+          }
+        }
+      },
+      "fmd": {
+        "accuracy": 0.875,
+        "macro_f1": 0.8777777552604675,
+        "unweighted_loss": 0.40336358547210693,
+        "confusion_matrix": [
+          [
+            8,
+            3,
+            0
+          ],
+          [
+            1,
+            10,
+            0
+          ],
+          [
+            0,
+            0,
+            10
+          ]
+        ],
+        "per_class": {
+          "metal": {
+            "precision": 0.8888888955116272,
+            "recall": 0.7272727489471436,
+            "f1": 0.800000011920929,
+            "support": 11
+          },
+          "plastic": {
+            "precision": 0.7692307829856873,
+            "recall": 0.9090909361839294,
+            "f1": 0.8333333134651184,
+            "support": 11
+          },
+          "wood": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 10
+          }
+        }
+      }
+    },
+    "average_macro_f1": 0.7441100478172302,
+    "average_accuracy": 0.809513658285141,
+    "average_nll": 0.5576378107070923,
+    "guards_passed": {
+      "fmd_metal_recall": true,
+      "fmd_macro_f1": true,
+      "mcubes_macro_f1": true
+    },
+    "eligible": true,
+    "max_probability_sum_abs_error": 1.1920928955078125e-07
+  },
+  "old_baseline_sha256": "01b4e67f6bd5d811e9f8aab137bb677284eb3f0f77d5ddd00db08e3caf5d46d3",
+  "combined_rgb_sha256": "e3cbd7562abe8b15636555c1f282eb462324a509870d144e2ff0e7aa21a3836f",
+  "dataprep_manifest_sha256": "4fb379f9352edf2643aac8ae046abb29ba99db63d839e18c94c00b822069c9f5",
+  "fmd_train_validation_manifest_sha256": "7842f3b54b57824cac583ec218575fd3cb2953db3b2bea9ab35127d8b816c200",
+  "shared_backbone_exact_equal": true,
+  "backbone_sha256": "cabc9cc6e6ede0930c770eb02a095367ad98e2e4f5502b43255bbb7551d46f5c",
+  "non_fc_tensors_compared": 120,
+  "tradeoffs": {
+    "fmd_metal_recall_baseline": 0.8181818127632141,
+    "fmd_metal_recall_selected": 0.7272727489471436,
+    "mcubes_macro_f1_vs_combined_only": -0.01959890127182007
+  },
+  "held_out_tests_evaluated_before_freeze": false,
+  "test_authorization": "Separate root authorization required; this script never evaluates tests"
+}

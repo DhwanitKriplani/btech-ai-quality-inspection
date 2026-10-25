@@ -1,0 +1,1574 @@
+{
+  "audit_date": "2026-10-25",
+  "method": "Read-only analysis of stored labels/manifests/code/CSV/metrics; no model loading, inference, training, validation rerun, or test reevaluation. Reports written only outside project.",
+  "project_root": "C:\\Users\\Dhwanit Kriplani\\OneDrive\\Documents\\ChatGPT\\btech project",
+  "datasets": {
+    "nir": {
+      "manifest_path": "C:\\Users\\Dhwanit Kriplani\\OneDrive\\Documents\\ChatGPT\\btech project\\integrated_inspection\\material_detection_data\\manifest.json",
+      "manifest_sha256": "2326efc6e50ce5e8e66c2070902a5df249f8481cb40baf594555bbb5dcaaeceb",
+      "config": {
+        "left_offset": 192,
+        "connectivity": 8,
+        "minimum_component_area": 256,
+        "minimum_bbox_side": 12,
+        "minimum_bbox_fill": 0.1,
+        "scene_purge": true,
+        "invalid_mask_rule": "NIR_warped_mask == 0 is valid",
+        "intensity_conversion": "uint16 -> round(value/257); uint8 unchanged",
+        "input_channels": "same NIR intensity repeated into RGB; no GT masking",
+        "modality": "nir"
+      },
+      "label_semantics": "connected material regions, not guaranteed physical object instances",
+      "label_manifest_errors": [],
+      "source_split_counts": {
+        "train": {
+          "original": 302,
+          "retained": 212,
+          "excluded": 90,
+          "unique_scene_prefixes": 26
+        },
+        "val": {
+          "original": 96,
+          "retained": 76,
+          "excluded": 20,
+          "unique_scene_prefixes": 9
+        },
+        "test": {
+          "original": 102,
+          "retained": 102,
+          "excluded": 0,
+          "unique_scene_prefixes": 12
+        }
+      },
+      "scene_prefix_overlap": {
+        "train_val": [],
+        "train_test": [],
+        "val_test": []
+      },
+      "splits": {
+        "train": {
+          "images": 212,
+          "boxes": 3939,
+          "negative_frames": 0,
+          "source_dimensions": [
+            [
+              1032,
+              1024
+            ]
+          ],
+          "boxes_per_frame": {
+            "count": 212,
+            "min": 2.0,
+            "p10": 6.0,
+            "median": 18.0,
+            "p90": 33.900000000000006,
+            "max": 61.0,
+            "mean": 18.580188679245282
+          },
+          "class_summary": {
+            "metal": {
+              "boxes": 2578,
+              "frames_with_class": 203,
+              "scene_count_with_class": 26,
+              "component_pixels": 15972610,
+              "bbox_fill": {
+                "count": 2578,
+                "min": 0.10060950594854363,
+                "p10": 0.2288968681294028,
+                "median": 0.4737550092764379,
+                "p90": 0.8102731092436976,
+                "max": 1.0,
+                "mean": 0.49990821511713696
+              },
+              "short_side_pixels_at_640": {
+                "count": 2578,
+                "min": 7.441860465116279,
+                "p10": 9.922480620155039,
+                "median": 21.705426356589147,
+                "p90": 79.37984496124031,
+                "max": 582.3255813953489,
+                "mean": 37.8248867880275
+              },
+              "fraction_short_side_under_16_at_640": 0.3297129557796742
+            },
+            "plastic": {
+              "boxes": 290,
+              "frames_with_class": 94,
+              "scene_count_with_class": 18,
+              "component_pixels": 720310,
+              "bbox_fill": {
+                "count": 290,
+                "min": 0.11968954248366014,
+                "p10": 0.23000625972120467,
+                "median": 0.5649404761904762,
+                "p90": 0.8466484885925485,
+                "max": 1.0,
+                "mean": 0.558295528034563
+              },
+              "short_side_pixels_at_640": {
+                "count": 290,
+                "min": 7.441860465116279,
+                "p10": 9.30232558139535,
+                "median": 17.364341085271317,
+                "p90": 46.573643410852725,
+                "max": 179.2248062015504,
+                "mean": 25.552526062550122
+              },
+              "fraction_short_side_under_16_at_640": 0.4413793103448276
+            },
+            "wood": {
+              "boxes": 1071,
+              "frames_with_class": 179,
+              "scene_count_with_class": 26,
+              "component_pixels": 10742230,
+              "bbox_fill": {
+                "count": 1071,
+                "min": 0.1007642799678198,
+                "p10": 0.16101694915254236,
+                "median": 0.32676005747126435,
+                "p90": 0.65284178187404,
+                "max": 0.9449885541855263,
+                "mean": 0.36561117694033474
+              },
+              "short_side_pixels_at_640": {
+                "count": 1071,
+                "min": 7.441860465116279,
+                "p10": 11.782945736434108,
+                "median": 27.286821705426355,
+                "p90": 137.05426356589146,
+                "max": 502.3255813953488,
+                "mean": 54.82958041097576
+              },
+              "fraction_short_side_under_16_at_640": 0.23716153127917833
+            }
+          },
+          "normalized_width": {
+            "count": 3939,
+            "min": 0.011627906976744186,
+            "p10": 0.018410852713178296,
+            "median": 0.04748062015503876,
+            "p90": 0.20445736434108527,
+            "max": 1.0,
+            "mean": 0.09088699567631181
+          },
+          "normalized_height": {
+            "count": 3939,
+            "min": 0.01171875,
+            "p10": 0.0224609375,
+            "median": 0.0595703125,
+            "p90": 0.24609375,
+            "max": 1.0,
+            "mean": 0.10430922148705254
+          },
+          "normalized_box_area": {
+            "count": 3939,
+            "min": 0.00027252906976744186,
+            "p10": 0.0006349548812984497,
+            "median": 0.00255874515503876,
+            "p90": 0.03638263081395349,
+            "max": 0.9169921875,
+            "mean": 0.01878155506443282
+          },
+          "short_side_pixels_at_640": {
+            "count": 3939,
+            "min": 7.441860465116279,
+            "p10": 9.922480620155039,
+            "median": 22.325581395348838,
+            "p90": 89.92248062015504,
+            "max": 582.3255813953489,
+            "mean": 41.54487720686201
+          },
+          "fraction_short_side_under_8_at_640": 0.022594567149022596,
+          "fraction_short_side_under_16_at_640": 0.31276973851231277,
+          "fraction_short_side_under_32_at_640": 0.6603198781416603,
+          "component_fill": {
+            "count": 3939,
+            "min": 0.10060950594854363,
+            "p10": 0.19337837722988535,
+            "median": 0.43584229390681006,
+            "p90": 0.7913768115942029,
+            "max": 1.0,
+            "mean": 0.46769196552553965
+          },
+          "fraction_fill_below_0_25": 0.1871033257171871,
+          "fraction_fill_below_0_5": 0.5915206905305915,
+          "aspect_ratio_long_over_short": {
+            "count": 3939,
+            "min": 1.0,
+            "p10": 1.1111111111111112,
+            "median": 1.8387096774193548,
+            "p90": 4.751515151515154,
+            "max": 46.90909090909091,
+            "mean": 2.6065558353482543
+          },
+          "fraction_aspect_ratio_above_5": 0.08758568164508758,
+          "fraction_aspect_ratio_above_10": 0.01777100787001777,
+          "fraction_touching_any_image_border": 0.23127697385123128,
+          "fraction_touching_left_cropped_border": 0.09748667174409749,
+          "overlap": {
+            "all_pairs": 46541,
+            "iou_positive_pairs": 2379,
+            "iou_over_0_5_pairs": 5,
+            "same_class_iou_over_0_5_pairs": 2,
+            "different_class_iou_over_0_5_pairs": 3,
+            "smaller_box_90pct_contained_pairs": 960,
+            "frames_with_iou_over_0_5": 5
+          }
+        },
+        "val": {
+          "images": 76,
+          "boxes": 1438,
+          "negative_frames": 1,
+          "source_dimensions": [
+            [
+              1032,
+              1024
+            ]
+          ],
+          "boxes_per_frame": {
+            "count": 76,
+            "min": 0.0,
+            "p10": 4.0,
+            "median": 18.0,
+            "p90": 34.5,
+            "max": 58.0,
+            "mean": 18.92105263157895
+          },
+          "class_summary": {
+            "metal": {
+              "boxes": 837,
+              "frames_with_class": 71,
+              "scene_count_with_class": 9,
+              "component_pixels": 5433680,
+              "bbox_fill": {
+                "count": 837,
+                "min": 0.10144230769230769,
+                "p10": 0.21758829844010316,
+                "median": 0.43588039867109635,
+                "p90": 0.7678378993549734,
+                "max": 0.9846153846153847,
+                "mean": 0.46555834597901014
+              },
+              "short_side_pixels_at_640": {
+                "count": 837,
+                "min": 7.441860465116279,
+                "p10": 10.542635658914728,
+                "median": 20.46511627906977,
+                "p90": 81.24031007751931,
+                "max": 595.3488372093024,
+                "mean": 38.7067137154659
+              },
+              "fraction_short_side_under_16_at_640": 0.3321385902031063
+            },
+            "plastic": {
+              "boxes": 87,
+              "frames_with_class": 33,
+              "scene_count_with_class": 7,
+              "component_pixels": 131414,
+              "bbox_fill": {
+                "count": 87,
+                "min": 0.13271317829457363,
+                "p10": 0.23700048010392838,
+                "median": 0.6546052631578947,
+                "p90": 0.8603413729128015,
+                "max": 0.9633699633699634,
+                "mean": 0.5948423396115473
+              },
+              "short_side_pixels_at_640": {
+                "count": 87,
+                "min": 7.441860465116279,
+                "p10": 9.054263565891473,
+                "median": 13.643410852713178,
+                "p90": 32.49612403100781,
+                "max": 70.07751937984496,
+                "mean": 19.5028067361668
+              },
+              "fraction_short_side_under_16_at_640": 0.5632183908045977
+            },
+            "wood": {
+              "boxes": 514,
+              "frames_with_class": 64,
+              "scene_count_with_class": 9,
+              "component_pixels": 2750602,
+              "bbox_fill": {
+                "count": 514,
+                "min": 0.1,
+                "p10": 0.17819618611746757,
+                "median": 0.38306651503222233,
+                "p90": 0.6580528846153846,
+                "max": 0.9735576923076923,
+                "mean": 0.402648595315485
+              },
+              "short_side_pixels_at_640": {
+                "count": 514,
+                "min": 7.441860465116279,
+                "p10": 9.30232558139535,
+                "median": 23.565891472868216,
+                "p90": 89.55038759689921,
+                "max": 418.6046511627907,
+                "mean": 41.92561759116822
+              },
+              "fraction_short_side_under_16_at_640": 0.3035019455252918
+            }
+          },
+          "normalized_width": {
+            "count": 1438,
+            "min": 0.011627906976744186,
+            "p10": 0.018410852713178296,
+            "median": 0.045542635658914726,
+            "p90": 0.21220930232558138,
+            "max": 1.0,
+            "mean": 0.09198553115330292
+          },
+          "normalized_height": {
+            "count": 1438,
+            "min": 0.01171875,
+            "p10": 0.0205078125,
+            "median": 0.0576171875,
+            "p90": 0.17802734374999996,
+            "max": 1.0,
+            "mean": 0.08957346357788595
+          },
+          "normalized_box_area": {
+            "count": 1438,
+            "min": 0.00024603318798449613,
+            "p10": 0.0006385507509689924,
+            "median": 0.002168877180232558,
+            "p90": 0.028431500575339143,
+            "max": 0.9375,
+            "mean": 0.01676542778914614
+          },
+          "short_side_pixels_at_640": {
+            "count": 1438,
+            "min": 7.441860465116279,
+            "p10": 9.922480620155039,
+            "median": 21.085271317829456,
+            "p90": 80.18604651162788,
+            "max": 595.3488372093024,
+            "mean": 38.69543185518216
+          },
+          "fraction_short_side_under_8_at_640": 0.02086230876216968,
+          "fraction_short_side_under_16_at_640": 0.33588317107093185,
+          "fraction_short_side_under_32_at_640": 0.674547983310153,
+          "component_fill": {
+            "count": 1438,
+            "min": 0.1,
+            "p10": 0.19990711595304697,
+            "median": 0.4235685483870968,
+            "p90": 0.7578574111636992,
+            "max": 0.9846153846153847,
+            "mean": 0.4508936002244753
+          },
+          "fraction_fill_below_0_25": 0.18567454798331015,
+          "fraction_fill_below_0_5": 0.6432545201668984,
+          "aspect_ratio_long_over_short": {
+            "count": 1438,
+            "min": 1.0,
+            "p10": 1.1189840255591055,
+            "median": 1.875,
+            "p90": 4.350882352941176,
+            "max": 23.8,
+            "mean": 2.457521970518934
+          },
+          "fraction_aspect_ratio_above_5": 0.0737134909596662,
+          "fraction_aspect_ratio_above_10": 0.01043115438108484,
+          "fraction_touching_any_image_border": 0.20166898470097358,
+          "fraction_touching_left_cropped_border": 0.09248956884561892,
+          "overlap": {
+            "all_pairs": 18205,
+            "iou_positive_pairs": 858,
+            "iou_over_0_5_pairs": 3,
+            "same_class_iou_over_0_5_pairs": 1,
+            "different_class_iou_over_0_5_pairs": 2,
+            "smaller_box_90pct_contained_pairs": 343,
+            "frames_with_iou_over_0_5": 3
+          }
+        },
+        "test": {
+          "images": 102,
+          "boxes": 1840,
+          "negative_frames": 0,
+          "source_dimensions": [
+            [
+              1032,
+              1024
+            ]
+          ],
+          "boxes_per_frame": {
+            "count": 102,
+            "min": 1.0,
+            "p10": 6.0,
+            "median": 17.0,
+            "p90": 30.900000000000006,
+            "max": 58.0,
+            "mean": 18.03921568627451
+          },
+          "class_summary": {
+            "metal": {
+              "boxes": 1017,
+              "frames_with_class": 95,
+              "scene_count_with_class": 12,
+              "component_pixels": 5984556,
+              "bbox_fill": {
+                "count": 1017,
+                "min": 0.10011551790527531,
+                "p10": 0.20196536655014793,
+                "median": 0.463855421686747,
+                "p90": 0.7728344867358709,
+                "max": 0.9909255898366606,
+                "mean": 0.48551657466495113
+              },
+              "short_side_pixels_at_640": {
+                "count": 1017,
+                "min": 7.441860465116279,
+                "p10": 10.542635658914728,
+                "median": 23.565891472868216,
+                "p90": 94.51162790697673,
+                "max": 435.3488372093023,
+                "mean": 41.96870259846181
+              },
+              "fraction_short_side_under_16_at_640": 0.3008849557522124
+            },
+            "plastic": {
+              "boxes": 254,
+              "frames_with_class": 64,
+              "scene_count_with_class": 11,
+              "component_pixels": 801597,
+              "bbox_fill": {
+                "count": 254,
+                "min": 0.109004329004329,
+                "p10": 0.2659918110774954,
+                "median": 0.6266298172884999,
+                "p90": 0.8736569681636096,
+                "max": 0.9652777777777778,
+                "mean": 0.5993733774849611
+              },
+              "short_side_pixels_at_640": {
+                "count": 254,
+                "min": 7.441860465116279,
+                "p10": 9.30232558139535,
+                "median": 15.813953488372093,
+                "p90": 45.27131782945737,
+                "max": 148.2170542635659,
+                "mean": 23.78318989196118
+              },
+              "fraction_short_side_under_16_at_640": 0.5
+            },
+            "wood": {
+              "boxes": 569,
+              "frames_with_class": 96,
+              "scene_count_with_class": 12,
+              "component_pixels": 3149637,
+              "bbox_fill": {
+                "count": 569,
+                "min": 0.10046212577858148,
+                "p10": 0.156959633611616,
+                "median": 0.3313953488372093,
+                "p90": 0.6580337896968736,
+                "max": 0.9468599033816425,
+                "mean": 0.36846163202652465
+              },
+              "short_side_pixels_at_640": {
+                "count": 569,
+                "min": 7.441860465116279,
+                "p10": 11.162790697674419,
+                "median": 26.046511627906977,
+                "p90": 94.3875968992248,
+                "max": 388.83720930232556,
+                "mean": 43.14600618520183
+              },
+              "fraction_short_side_under_16_at_640": 0.24077328646748683
+            }
+          },
+          "normalized_width": {
+            "count": 1840,
+            "min": 0.011627906976744186,
+            "p10": 0.018410852713178296,
+            "median": 0.04748062015503876,
+            "p90": 0.1996124031007752,
+            "max": 1.0,
+            "mean": 0.0857631867205932
+          },
+          "normalized_height": {
+            "count": 1840,
+            "min": 0.01171875,
+            "p10": 0.0234375,
+            "median": 0.0625,
+            "p90": 0.24824218750000027,
+            "max": 0.939453125,
+            "mean": 0.10351031759510869
+          },
+          "normalized_box_area": {
+            "count": 1840,
+            "min": 0.00028293816618217056,
+            "p10": 0.0006395916606104652,
+            "median": 0.0027536791424418606,
+            "p90": 0.03502254042514536,
+            "max": 0.685546875,
+            "mean": 0.01557215892147608
+          },
+          "short_side_pixels_at_640": {
+            "count": 1840,
+            "min": 7.441860465116279,
+            "p10": 10.542635658914728,
+            "median": 22.94573643410853,
+            "p90": 86.88372093023264,
+            "max": 435.3488372093023,
+            "mean": 39.82237950792046
+          },
+          "fraction_short_side_under_8_at_640": 0.011956521739130435,
+          "fraction_short_side_under_16_at_640": 0.30978260869565216,
+          "fraction_short_side_under_32_at_640": 0.6429347826086956,
+          "component_fill": {
+            "count": 1840,
+            "min": 0.10011551790527531,
+            "p10": 0.18936304162196801,
+            "median": 0.43286563131468686,
+            "p90": 0.7799780721346833,
+            "max": 0.9909255898366606,
+            "mean": 0.465035795075287
+          },
+          "fraction_fill_below_0_25": 0.19782608695652174,
+          "fraction_fill_below_0_5": 0.5891304347826087,
+          "aspect_ratio_long_over_short": {
+            "count": 1840,
+            "min": 1.0,
+            "p10": 1.125,
+            "median": 1.8261708913882826,
+            "p90": 4.772307692307696,
+            "max": 38.53846153846154,
+            "mean": 2.632463545808959
+          },
+          "fraction_aspect_ratio_above_5": 0.09184782608695652,
+          "fraction_aspect_ratio_above_10": 0.021195652173913043,
+          "fraction_touching_any_image_border": 0.2233695652173913,
+          "fraction_touching_left_cropped_border": 0.08315217391304348,
+          "overlap": {
+            "all_pairs": 21002,
+            "iou_positive_pairs": 1235,
+            "iou_over_0_5_pairs": 13,
+            "same_class_iou_over_0_5_pairs": 2,
+            "different_class_iou_over_0_5_pairs": 11,
+            "smaller_box_90pct_contained_pairs": 454,
+            "frames_with_iou_over_0_5": 9
+          }
+        }
+      }
+    },
+    "rgb": {
+      "manifest_path": "C:\\Users\\Dhwanit Kriplani\\OneDrive\\Documents\\ChatGPT\\btech project\\integrated_inspection\\material_rgb_detection_data\\manifest.json",
+      "manifest_sha256": "bbcc0e2e783cffd0617a308da96181878625fbb3ab0ae5173cdc8fed9686c646",
+      "config": {
+        "modality": "rgb",
+        "left_offset": 192,
+        "connectivity": 8,
+        "minimum_component_area": 256,
+        "minimum_bbox_side": 12,
+        "minimum_bbox_fill": 0.1,
+        "scene_purge": true,
+        "invalid_mask_rule": "NIR_warped_mask == 0 is valid",
+        "intensity_conversion": "uint16 -> round(value/257); uint8 unchanged",
+        "input_channels": "polL_color RGB color; no GT masking"
+      },
+      "label_semantics": "connected material regions, not guaranteed physical object instances",
+      "label_manifest_errors": [],
+      "source_split_counts": {
+        "train": {
+          "original": 302,
+          "retained": 212,
+          "excluded": 90,
+          "unique_scene_prefixes": 26
+        },
+        "val": {
+          "original": 96,
+          "retained": 76,
+          "excluded": 20,
+          "unique_scene_prefixes": 9
+        },
+        "test": {
+          "original": 102,
+          "retained": 102,
+          "excluded": 0,
+          "unique_scene_prefixes": 12
+        }
+      },
+      "scene_prefix_overlap": {
+        "train_val": [],
+        "train_test": [],
+        "val_test": []
+      },
+      "splits": {
+        "train": {
+          "images": 212,
+          "boxes": 3939,
+          "negative_frames": 0,
+          "source_dimensions": [
+            [
+              1032,
+              1024
+            ]
+          ],
+          "boxes_per_frame": {
+            "count": 212,
+            "min": 2.0,
+            "p10": 6.0,
+            "median": 18.0,
+            "p90": 33.900000000000006,
+            "max": 61.0,
+            "mean": 18.580188679245282
+          },
+          "class_summary": {
+            "metal": {
+              "boxes": 2578,
+              "frames_with_class": 203,
+              "scene_count_with_class": 26,
+              "component_pixels": 15972610,
+              "bbox_fill": {
+                "count": 2578,
+                "min": 0.10060950594854363,
+                "p10": 0.2288968681294028,
+                "median": 0.4737550092764379,
+                "p90": 0.8102731092436976,
+                "max": 1.0,
+                "mean": 0.49990821511713696
+              },
+              "short_side_pixels_at_640": {
+                "count": 2578,
+                "min": 7.441860465116279,
+                "p10": 9.922480620155039,
+                "median": 21.705426356589147,
+                "p90": 79.37984496124031,
+                "max": 582.3255813953489,
+                "mean": 37.8248867880275
+              },
+              "fraction_short_side_under_16_at_640": 0.3297129557796742
+            },
+            "plastic": {
+              "boxes": 290,
+              "frames_with_class": 94,
+              "scene_count_with_class": 18,
+              "component_pixels": 720310,
+              "bbox_fill": {
+                "count": 290,
+                "min": 0.11968954248366014,
+                "p10": 0.23000625972120467,
+                "median": 0.5649404761904762,
+                "p90": 0.8466484885925485,
+                "max": 1.0,
+                "mean": 0.558295528034563
+              },
+              "short_side_pixels_at_640": {
+                "count": 290,
+                "min": 7.441860465116279,
+                "p10": 9.30232558139535,
+                "median": 17.364341085271317,
+                "p90": 46.573643410852725,
+                "max": 179.2248062015504,
+                "mean": 25.552526062550122
+              },
+              "fraction_short_side_under_16_at_640": 0.4413793103448276
+            },
+            "wood": {
+              "boxes": 1071,
+              "frames_with_class": 179,
+              "scene_count_with_class": 26,
+              "component_pixels": 10742230,
+              "bbox_fill": {
+                "count": 1071,
+                "min": 0.1007642799678198,
+                "p10": 0.16101694915254236,
+                "median": 0.32676005747126435,
+                "p90": 0.65284178187404,
+                "max": 0.9449885541855263,
+                "mean": 0.36561117694033474
+              },
+              "short_side_pixels_at_640": {
+                "count": 1071,
+                "min": 7.441860465116279,
+                "p10": 11.782945736434108,
+                "median": 27.286821705426355,
+                "p90": 137.05426356589146,
+                "max": 502.3255813953488,
+                "mean": 54.82958041097576
+              },
+              "fraction_short_side_under_16_at_640": 0.23716153127917833
+            }
+          },
+          "normalized_width": {
+            "count": 3939,
+            "min": 0.011627906976744186,
+            "p10": 0.018410852713178296,
+            "median": 0.04748062015503876,
+            "p90": 0.20445736434108527,
+            "max": 1.0,
+            "mean": 0.09088699567631181
+          },
+          "normalized_height": {
+            "count": 3939,
+            "min": 0.01171875,
+            "p10": 0.0224609375,
+            "median": 0.0595703125,
+            "p90": 0.24609375,
+            "max": 1.0,
+            "mean": 0.10430922148705254
+          },
+          "normalized_box_area": {
+            "count": 3939,
+            "min": 0.00027252906976744186,
+            "p10": 0.0006349548812984497,
+            "median": 0.00255874515503876,
+            "p90": 0.03638263081395349,
+            "max": 0.9169921875,
+            "mean": 0.01878155506443282
+          },
+          "short_side_pixels_at_640": {
+            "count": 3939,
+            "min": 7.441860465116279,
+            "p10": 9.922480620155039,
+            "median": 22.325581395348838,
+            "p90": 89.92248062015504,
+            "max": 582.3255813953489,
+            "mean": 41.54487720686201
+          },
+          "fraction_short_side_under_8_at_640": 0.022594567149022596,
+          "fraction_short_side_under_16_at_640": 0.31276973851231277,
+          "fraction_short_side_under_32_at_640": 0.6603198781416603,
+          "component_fill": {
+            "count": 3939,
+            "min": 0.10060950594854363,
+            "p10": 0.19337837722988535,
+            "median": 0.43584229390681006,
+            "p90": 0.7913768115942029,
+            "max": 1.0,
+            "mean": 0.46769196552553965
+          },
+          "fraction_fill_below_0_25": 0.1871033257171871,
+          "fraction_fill_below_0_5": 0.5915206905305915,
+          "aspect_ratio_long_over_short": {
+            "count": 3939,
+            "min": 1.0,
+            "p10": 1.1111111111111112,
+            "median": 1.8387096774193548,
+            "p90": 4.751515151515154,
+            "max": 46.90909090909091,
+            "mean": 2.6065558353482543
+          },
+          "fraction_aspect_ratio_above_5": 0.08758568164508758,
+          "fraction_aspect_ratio_above_10": 0.01777100787001777,
+          "fraction_touching_any_image_border": 0.23127697385123128,
+          "fraction_touching_left_cropped_border": 0.09748667174409749,
+          "overlap": {
+            "all_pairs": 46541,
+            "iou_positive_pairs": 2379,
+            "iou_over_0_5_pairs": 5,
+            "same_class_iou_over_0_5_pairs": 2,
+            "different_class_iou_over_0_5_pairs": 3,
+            "smaller_box_90pct_contained_pairs": 960,
+            "frames_with_iou_over_0_5": 5
+          }
+        },
+        "val": {
+          "images": 76,
+          "boxes": 1438,
+          "negative_frames": 1,
+          "source_dimensions": [
+            [
+              1032,
+              1024
+            ]
+          ],
+          "boxes_per_frame": {
+            "count": 76,
+            "min": 0.0,
+            "p10": 4.0,
+            "median": 18.0,
+            "p90": 34.5,
+            "max": 58.0,
+            "mean": 18.92105263157895
+          },
+          "class_summary": {
+            "metal": {
+              "boxes": 837,
+              "frames_with_class": 71,
+              "scene_count_with_class": 9,
+              "component_pixels": 5433680,
+              "bbox_fill": {
+                "count": 837,
+                "min": 0.10144230769230769,
+                "p10": 0.21758829844010316,
+                "median": 0.43588039867109635,
+                "p90": 0.7678378993549734,
+                "max": 0.9846153846153847,
+                "mean": 0.46555834597901014
+              },
+              "short_side_pixels_at_640": {
+                "count": 837,
+                "min": 7.441860465116279,
+                "p10": 10.542635658914728,
+                "median": 20.46511627906977,
+                "p90": 81.24031007751931,
+                "max": 595.3488372093024,
+                "mean": 38.7067137154659
+              },
+              "fraction_short_side_under_16_at_640": 0.3321385902031063
+            },
+            "plastic": {
+              "boxes": 87,
+              "frames_with_class": 33,
+              "scene_count_with_class": 7,
+              "component_pixels": 131414,
+              "bbox_fill": {
+                "count": 87,
+                "min": 0.13271317829457363,
+                "p10": 0.23700048010392838,
+                "median": 0.6546052631578947,
+                "p90": 0.8603413729128015,
+                "max": 0.9633699633699634,
+                "mean": 0.5948423396115473
+              },
+              "short_side_pixels_at_640": {
+                "count": 87,
+                "min": 7.441860465116279,
+                "p10": 9.054263565891473,
+                "median": 13.643410852713178,
+                "p90": 32.49612403100781,
+                "max": 70.07751937984496,
+                "mean": 19.5028067361668
+              },
+              "fraction_short_side_under_16_at_640": 0.5632183908045977
+            },
+            "wood": {
+              "boxes": 514,
+              "frames_with_class": 64,
+              "scene_count_with_class": 9,
+              "component_pixels": 2750602,
+              "bbox_fill": {
+                "count": 514,
+                "min": 0.1,
+                "p10": 0.17819618611746757,
+                "median": 0.38306651503222233,
+                "p90": 0.6580528846153846,
+                "max": 0.9735576923076923,
+                "mean": 0.402648595315485
+              },
+              "short_side_pixels_at_640": {
+                "count": 514,
+                "min": 7.441860465116279,
+                "p10": 9.30232558139535,
+                "median": 23.565891472868216,
+                "p90": 89.55038759689921,
+                "max": 418.6046511627907,
+                "mean": 41.92561759116822
+              },
+              "fraction_short_side_under_16_at_640": 0.3035019455252918
+            }
+          },
+          "normalized_width": {
+            "count": 1438,
+            "min": 0.011627906976744186,
+            "p10": 0.018410852713178296,
+            "median": 0.045542635658914726,
+            "p90": 0.21220930232558138,
+            "max": 1.0,
+            "mean": 0.09198553115330292
+          },
+          "normalized_height": {
+            "count": 1438,
+            "min": 0.01171875,
+            "p10": 0.0205078125,
+            "median": 0.0576171875,
+            "p90": 0.17802734374999996,
+            "max": 1.0,
+            "mean": 0.08957346357788595
+          },
+          "normalized_box_area": {
+            "count": 1438,
+            "min": 0.00024603318798449613,
+            "p10": 0.0006385507509689924,
+            "median": 0.002168877180232558,
+            "p90": 0.028431500575339143,
+            "max": 0.9375,
+            "mean": 0.01676542778914614
+          },
+          "short_side_pixels_at_640": {
+            "count": 1438,
+            "min": 7.441860465116279,
+            "p10": 9.922480620155039,
+            "median": 21.085271317829456,
+            "p90": 80.18604651162788,
+            "max": 595.3488372093024,
+            "mean": 38.69543185518216
+          },
+          "fraction_short_side_under_8_at_640": 0.02086230876216968,
+          "fraction_short_side_under_16_at_640": 0.33588317107093185,
+          "fraction_short_side_under_32_at_640": 0.674547983310153,
+          "component_fill": {
+            "count": 1438,
+            "min": 0.1,
+            "p10": 0.19990711595304697,
+            "median": 0.4235685483870968,
+            "p90": 0.7578574111636992,
+            "max": 0.9846153846153847,
+            "mean": 0.4508936002244753
+          },
+          "fraction_fill_below_0_25": 0.18567454798331015,
+          "fraction_fill_below_0_5": 0.6432545201668984,
+          "aspect_ratio_long_over_short": {
+            "count": 1438,
+            "min": 1.0,
+            "p10": 1.1189840255591055,
+            "median": 1.875,
+            "p90": 4.350882352941176,
+            "max": 23.8,
+            "mean": 2.457521970518934
+          },
+          "fraction_aspect_ratio_above_5": 0.0737134909596662,
+          "fraction_aspect_ratio_above_10": 0.01043115438108484,
+          "fraction_touching_any_image_border": 0.20166898470097358,
+          "fraction_touching_left_cropped_border": 0.09248956884561892,
+          "overlap": {
+            "all_pairs": 18205,
+            "iou_positive_pairs": 858,
+            "iou_over_0_5_pairs": 3,
+            "same_class_iou_over_0_5_pairs": 1,
+            "different_class_iou_over_0_5_pairs": 2,
+            "smaller_box_90pct_contained_pairs": 343,
+            "frames_with_iou_over_0_5": 3
+          }
+        },
+        "test": {
+          "images": 102,
+          "boxes": 1840,
+          "negative_frames": 0,
+          "source_dimensions": [
+            [
+              1032,
+              1024
+            ]
+          ],
+          "boxes_per_frame": {
+            "count": 102,
+            "min": 1.0,
+            "p10": 6.0,
+            "median": 17.0,
+            "p90": 30.900000000000006,
+            "max": 58.0,
+            "mean": 18.03921568627451
+          },
+          "class_summary": {
+            "metal": {
+              "boxes": 1017,
+              "frames_with_class": 95,
+              "scene_count_with_class": 12,
+              "component_pixels": 5984556,
+              "bbox_fill": {
+                "count": 1017,
+                "min": 0.10011551790527531,
+                "p10": 0.20196536655014793,
+                "median": 0.463855421686747,
+                "p90": 0.7728344867358709,
+                "max": 0.9909255898366606,
+                "mean": 0.48551657466495113
+              },
+              "short_side_pixels_at_640": {
+                "count": 1017,
+                "min": 7.441860465116279,
+                "p10": 10.542635658914728,
+                "median": 23.565891472868216,
+                "p90": 94.51162790697673,
+                "max": 435.3488372093023,
+                "mean": 41.96870259846181
+              },
+              "fraction_short_side_under_16_at_640": 0.3008849557522124
+            },
+            "plastic": {
+              "boxes": 254,
+              "frames_with_class": 64,
+              "scene_count_with_class": 11,
+              "component_pixels": 801597,
+              "bbox_fill": {
+                "count": 254,
+                "min": 0.109004329004329,
+                "p10": 0.2659918110774954,
+                "median": 0.6266298172884999,
+                "p90": 0.8736569681636096,
+                "max": 0.9652777777777778,
+                "mean": 0.5993733774849611
+              },
+              "short_side_pixels_at_640": {
+                "count": 254,
+                "min": 7.441860465116279,
+                "p10": 9.30232558139535,
+                "median": 15.813953488372093,
+                "p90": 45.27131782945737,
+                "max": 148.2170542635659,
+                "mean": 23.78318989196118
+              },
+              "fraction_short_side_under_16_at_640": 0.5
+            },
+            "wood": {
+              "boxes": 569,
+              "frames_with_class": 96,
+              "scene_count_with_class": 12,
+              "component_pixels": 3149637,
+              "bbox_fill": {
+                "count": 569,
+                "min": 0.10046212577858148,
+                "p10": 0.156959633611616,
+                "median": 0.3313953488372093,
+                "p90": 0.6580337896968736,
+                "max": 0.9468599033816425,
+                "mean": 0.36846163202652465
+              },
+              "short_side_pixels_at_640": {
+                "count": 569,
+                "min": 7.441860465116279,
+                "p10": 11.162790697674419,
+                "median": 26.046511627906977,
+                "p90": 94.3875968992248,
+                "max": 388.83720930232556,
+                "mean": 43.14600618520183
+              },
+              "fraction_short_side_under_16_at_640": 0.24077328646748683
+            }
+          },
+          "normalized_width": {
+            "count": 1840,
+            "min": 0.011627906976744186,
+            "p10": 0.018410852713178296,
+            "median": 0.04748062015503876,
+            "p90": 0.1996124031007752,
+            "max": 1.0,
+            "mean": 0.0857631867205932
+          },
+          "normalized_height": {
+            "count": 1840,
+            "min": 0.01171875,
+            "p10": 0.0234375,
+            "median": 0.0625,
+            "p90": 0.24824218750000027,
+            "max": 0.939453125,
+            "mean": 0.10351031759510869
+          },
+          "normalized_box_area": {
+            "count": 1840,
+            "min": 0.00028293816618217056,
+            "p10": 0.0006395916606104652,
+            "median": 0.0027536791424418606,
+            "p90": 0.03502254042514536,
+            "max": 0.685546875,
+            "mean": 0.01557215892147608
+          },
+          "short_side_pixels_at_640": {
+            "count": 1840,
+            "min": 7.441860465116279,
+            "p10": 10.542635658914728,
+            "median": 22.94573643410853,
+            "p90": 86.88372093023264,
+            "max": 435.3488372093023,
+            "mean": 39.82237950792046
+          },
+          "fraction_short_side_under_8_at_640": 0.011956521739130435,
+          "fraction_short_side_under_16_at_640": 0.30978260869565216,
+          "fraction_short_side_under_32_at_640": 0.6429347826086956,
+          "component_fill": {
+            "count": 1840,
+            "min": 0.10011551790527531,
+            "p10": 0.18936304162196801,
+            "median": 0.43286563131468686,
+            "p90": 0.7799780721346833,
+            "max": 0.9909255898366606,
+            "mean": 0.465035795075287
+          },
+          "fraction_fill_below_0_25": 0.19782608695652174,
+          "fraction_fill_below_0_5": 0.5891304347826087,
+          "aspect_ratio_long_over_short": {
+            "count": 1840,
+            "min": 1.0,
+            "p10": 1.125,
+            "median": 1.8261708913882826,
+            "p90": 4.772307692307696,
+            "max": 38.53846153846154,
+            "mean": 2.632463545808959
+          },
+          "fraction_aspect_ratio_above_5": 0.09184782608695652,
+          "fraction_aspect_ratio_above_10": 0.021195652173913043,
+          "fraction_touching_any_image_border": 0.2233695652173913,
+          "fraction_touching_left_cropped_border": 0.08315217391304348,
+          "overlap": {
+            "all_pairs": 21002,
+            "iou_positive_pairs": 1235,
+            "iou_over_0_5_pairs": 13,
+            "same_class_iou_over_0_5_pairs": 2,
+            "different_class_iou_over_0_5_pairs": 11,
+            "smaller_box_90pct_contained_pairs": 454,
+            "frames_with_iou_over_0_5": 9
+          }
+        }
+      }
+    }
+  },
+  "training_curves": {
+    "nir": {
+      "csv_path": "C:\\Users\\Dhwanit Kriplani\\OneDrive\\Documents\\ChatGPT\\btech project\\integrated_inspection\\training\\material_nir\\results.csv",
+      "epochs_recorded": 40,
+      "training_arguments": {
+        "model": "yolo26n.pt",
+        "epochs": "40",
+        "patience": "10",
+        "batch": "8",
+        "imgsz": "640",
+        "device": "'0'",
+        "optimizer": "AdamW",
+        "seed": "42",
+        "close_mosaic": "5",
+        "lr0": "0.001",
+        "lrf": "0.01",
+        "hsv_h": "0.0",
+        "hsv_s": "0.0",
+        "hsv_v": "0.4",
+        "mosaic": "1.0"
+      },
+      "peak_validation_ap95": {
+        "epoch": 36,
+        "ap50": 0.09445,
+        "ap50_95": 0.04318,
+        "precision": 0.21199,
+        "recall": 0.17622
+      },
+      "peak_validation_ap50": {
+        "epoch": 33,
+        "ap50": 0.09671,
+        "ap50_95": 0.04182
+      },
+      "first": {
+        "epoch": 1.0,
+        "time": 46.3996,
+        "train/box_loss": 2.49355,
+        "train/cls_loss": 5.3504,
+        "train/l1_loss": 0.01209,
+        "metrics/precision(B)": 0.01667,
+        "metrics/recall(B)": 0.08983,
+        "metrics/mAP50(B)": 0.00371,
+        "metrics/mAP50-95(B)": 0.00128,
+        "val/box_loss": 2.92326,
+        "val/cls_loss": 5.80612,
+        "val/l1_loss": 0.01737,
+        "lr/pg0": 0.000320988,
+        "lr/pg1": 0.000320988,
+        "lr/pg2": 0.0682222
+      },
+      "last": {
+        "epoch": 40.0,
+        "time": 246.2,
+        "train/box_loss": 2.0594,
+        "train/cls_loss": 2.55153,
+        "train/l1_loss": 0.01023,
+        "metrics/precision(B)": 0.18349,
+        "metrics/recall(B)": 0.17849,
+        "metrics/mAP50(B)": 0.09477,
+        "metrics/mAP50-95(B)": 0.04239,
+        "val/box_loss": 2.12486,
+        "val/cls_loss": 3.02228,
+        "val/l1_loss": 0.01099,
+        "lr/pg0": 3.475e-05,
+        "lr/pg1": 3.475e-05,
+        "lr/pg2": 3.475e-05
+      },
+      "last_10_ap95": [
+        0.04002,
+        0.04074,
+        0.04182,
+        0.04208,
+        0.04244,
+        0.04318,
+        0.04259,
+        0.04241,
+        0.0424,
+        0.04239
+      ],
+      "last_10_ap95_mean": 0.042007,
+      "previous_10_ap95_mean": 0.038031,
+      "last_10_ap95_slope_per_epoch": 0.0002313333333333342,
+      "last_minus_peak_ap95": -0.000790000000000006,
+      "interpretation": "CSV peak is not independently verified checkpoint epoch; model files were not loaded."
+    },
+    "rgb": {
+      "csv_path": "C:\\Users\\Dhwanit Kriplani\\OneDrive\\Documents\\ChatGPT\\btech project\\integrated_inspection\\training\\material_rgb\\results.csv",
+      "epochs_recorded": 40,
+      "training_arguments": {
+        "model": "yolo26n.pt",
+        "epochs": "40",
+        "patience": "10",
+        "batch": "8",
+        "imgsz": "640",
+        "device": "'0'",
+        "optimizer": "AdamW",
+        "seed": "42",
+        "close_mosaic": "5",
+        "lr0": "0.001",
+        "lrf": "0.01",
+        "hsv_h": "0.015",
+        "hsv_s": "0.7",
+        "hsv_v": "0.4",
+        "mosaic": "1.0"
+      },
+      "peak_validation_ap95": {
+        "epoch": 31,
+        "ap50": 0.11876,
+        "ap50_95": 0.05403,
+        "precision": 0.24807,
+        "recall": 0.21596
+      },
+      "peak_validation_ap50": {
+        "epoch": 31,
+        "ap50": 0.11876,
+        "ap50_95": 0.05403
+      },
+      "first": {
+        "epoch": 1.0,
+        "time": 57.1818,
+        "train/box_loss": 2.41135,
+        "train/cls_loss": 5.06567,
+        "train/l1_loss": 0.01199,
+        "metrics/precision(B)": 0.02076,
+        "metrics/recall(B)": 0.07537,
+        "metrics/mAP50(B)": 0.0055,
+        "metrics/mAP50-95(B)": 0.00245,
+        "val/box_loss": 2.69468,
+        "val/cls_loss": 4.60562,
+        "val/l1_loss": 0.01507,
+        "lr/pg0": 0.000320988,
+        "lr/pg1": 0.000320988,
+        "lr/pg2": 0.0682222
+      },
+      "last": {
+        "epoch": 40.0,
+        "time": 304.275,
+        "train/box_loss": 1.96905,
+        "train/cls_loss": 2.46168,
+        "train/l1_loss": 0.00974,
+        "metrics/precision(B)": 0.21114,
+        "metrics/recall(B)": 0.20852,
+        "metrics/mAP50(B)": 0.11392,
+        "metrics/mAP50-95(B)": 0.05171,
+        "val/box_loss": 2.01418,
+        "val/cls_loss": 2.94138,
+        "val/l1_loss": 0.01019,
+        "lr/pg0": 3.475e-05,
+        "lr/pg1": 3.475e-05,
+        "lr/pg2": 3.475e-05
+      },
+      "last_10_ap95": [
+        0.05403,
+        0.05322,
+        0.05358,
+        0.05296,
+        0.05269,
+        0.05184,
+        0.05082,
+        0.05176,
+        0.05102,
+        0.05171
+      ],
+      "last_10_ap95_mean": 0.05236300000000001,
+      "previous_10_ap95_mean": 0.049392,
+      "last_10_ap95_slope_per_epoch": -0.00031909090909090895,
+      "last_minus_peak_ap95": -0.0023200000000000026,
+      "interpretation": "CSV peak is not independently verified checkpoint epoch; model files were not loaded."
+    }
+  },
+  "existing_saved_test_metrics": {
+    "nir": {
+      "model": "C:\\Users\\Dhwanit Kriplani\\OneDrive\\Documents\\ChatGPT\\btech project\\integrated_inspection\\models\\material_nir_detector.pt",
+      "modality": "nir",
+      "training_source": "MCubeS",
+      "task": "connected material-region bounding boxes",
+      "names": {
+        "0": "metal",
+        "1": "plastic",
+        "2": "wood"
+      },
+      "trained_epochs_requested": 40,
+      "run_directory": "C:\\Users\\Dhwanit Kriplani\\OneDrive\\Documents\\ChatGPT\\btech project\\integrated_inspection\\training\\material_nir",
+      "held_out_test": {
+        "precision": 0.2242390938159439,
+        "recall": 0.15637282817031473,
+        "map50": 0.09855854191191667,
+        "map50_95": 0.04897389010759259,
+        "per_class_map50_95": {
+          "metal": 0.09694110787860193,
+          "plastic": 0.008416203183770746,
+          "wood": 0.041564359260405095
+        }
+      },
+      "weights_sha256": "421554c18ce30a1c1c29856d37d1a3b3dabd5f91b373a523bef3551274174372",
+      "limits": "Region boxes are not guaranteed physical object instances; user CCTV setup untested."
+    },
+    "rgb": {
+      "model": "C:\\Users\\Dhwanit Kriplani\\OneDrive\\Documents\\ChatGPT\\btech project\\integrated_inspection\\models\\material_rgb_detector.pt",
+      "modality": "rgb",
+      "training_source": "MCubeS",
+      "task": "connected material-region bounding boxes",
+      "names": {
+        "0": "metal",
+        "1": "plastic",
+        "2": "wood"
+      },
+      "trained_epochs_requested": 40,
+      "run_directory": "C:\\Users\\Dhwanit Kriplani\\OneDrive\\Documents\\ChatGPT\\btech project\\integrated_inspection\\training\\material_rgb",
+      "held_out_test": {
+        "precision": 0.24331598496176676,
+        "recall": 0.16854817978356518,
+        "map50": 0.11757025663951742,
+        "map50_95": 0.05482806505872572,
+        "per_class_map50_95": {
+          "metal": 0.10829649298265501,
+          "plastic": 0.02268651066342674,
+          "wood": 0.033501191530095474
+        }
+      },
+      "weights_sha256": "2d39e7d58a59d107ff2a96cb0f90f238c942b35161609cbef4d5c11ffab2a969",
+      "limits": "Region boxes are not guaranteed physical object instances; user CCTV setup untested."
+    }
+  },
+  "code_evidence": {
+    "connected_components": {
+      "file": "C:\\Users\\Dhwanit Kriplani\\OneDrive\\Documents\\ChatGPT\\btech project\\integrated_inspection\\prepare_material_detection.py",
+      "line": 50,
+      "text": "component_count, _, stats, _ = cv2.connectedComponentsWithStats(binary, connectivity=8)"
+    },
+    "binary_validity": {
+      "file": "C:\\Users\\Dhwanit Kriplani\\OneDrive\\Documents\\ChatGPT\\btech project\\integrated_inspection\\prepare_material_detection.py",
+      "line": 49,
+      "text": "binary = ((gt == LABELS[name]) & valid).astype(np.uint8)"
+    },
+    "thresholds": {
+      "file": "C:\\Users\\Dhwanit Kriplani\\OneDrive\\Documents\\ChatGPT\\btech project\\integrated_inspection\\prepare_material_detection.py",
+      "line": 54,
+      "text": "if area < minimum_area or min(w, h) < minimum_side or fill < minimum_fill:"
+    },
+    "rgb_input": {
+      "file": "C:\\Users\\Dhwanit Kriplani\\OneDrive\\Documents\\ChatGPT\\btech project\\integrated_inspection\\prepare_material_detection.py",
+      "line": 169,
+      "text": "image_rgb = cv2.cvtColor(fixed_rgb_uint8(frame), cv2.COLOR_BGR2RGB)"
+    },
+    "shared_nir_mask": {
+      "file": "C:\\Users\\Dhwanit Kriplani\\OneDrive\\Documents\\ChatGPT\\btech project\\integrated_inspection\\prepare_material_detection.py",
+      "line": 152,
+      "text": "for directory in (frame_directory, \"GT\", \"NIR_warped_mask\"):"
+    },
+    "boxes_from_nir_validity": {
+      "file": "C:\\Users\\Dhwanit Kriplani\\OneDrive\\Documents\\ChatGPT\\btech project\\integrated_inspection\\prepare_material_detection.py",
+      "line": 170,
+      "text": "boxes = region_boxes(gt, invalid == 0, args.min_area, args.min_side, args.min_fill)"
+    },
+    "unmasked_input_saved": {
+      "file": "C:\\Users\\Dhwanit Kriplani\\OneDrive\\Documents\\ChatGPT\\btech project\\integrated_inspection\\prepare_material_detection.py",
+      "line": 174,
+      "text": "Image.fromarray(image_rgb).save(image_path)"
+    },
+    "scene_prefix_definition": {
+      "file": "C:\\Users\\Dhwanit Kriplani\\OneDrive\\Documents\\ChatGPT\\btech project\\nir_material\\prepare_mcubes_crops.py",
+      "line": 18,
+      "text": "scene(image_id) = image_id.rsplit(\"_\",1)[0]"
+    }
+  },
+  "modality_annotation_comparison": {
+    "common_source_frames": 390,
+    "nir_only_frames": [],
+    "rgb_only_frames": [],
+    "exact_same_label_sha256_frames": 390,
+    "same_split_frames": 390,
+    "fact": "Both modalities use the NIR_warped_mask validity rule; RGB input pixels are not masked. This equality alone does not prove that discarded RGB pixels are physically visible target surfaces."
+  },
+  "raw_gt_mask_descriptive_audit_train_val_only": {
+    "train": {
+      "invalid_image_area_fraction": {
+        "count": 212,
+        "min": 0.0,
+        "p10": 0.0014198007509689922,
+        "median": 0.007610942042151163,
+        "p90": 0.020020572159641474,
+        "max": 0.04786102531492248,
+        "mean": 0.009818188258739214
+      },
+      "classes": {
+        "metal": {
+          "all_gt_target_pixels": 16950594,
+          "nir_invalid_gt_target_pixels": 323644,
+          "nir_valid_gt_target_pixels": 16626950,
+          "retained_component_pixels": 15972610,
+          "nir_invalid_fraction_of_gt_target_pixels": 0.01909337218506915,
+          "valid_target_pixels_excluded_by_component_filters": 654340,
+          "fraction_valid_target_pixels_retained": 0.9606458189866451
+        },
+        "plastic": {
+          "all_gt_target_pixels": 847572,
+          "nir_invalid_gt_target_pixels": 13830,
+          "nir_valid_gt_target_pixels": 833742,
+          "retained_component_pixels": 720310,
+          "nir_invalid_fraction_of_gt_target_pixels": 0.01631719783098073,
+          "valid_target_pixels_excluded_by_component_filters": 113432,
+          "fraction_valid_target_pixels_retained": 0.8639483197439976
+        },
+        "wood": {
+          "all_gt_target_pixels": 11139910,
+          "nir_invalid_gt_target_pixels": 188446,
+          "nir_valid_gt_target_pixels": 10951464,
+          "retained_component_pixels": 10742230,
+          "nir_invalid_fraction_of_gt_target_pixels": 0.01691629465588142,
+          "valid_target_pixels_excluded_by_component_filters": 209234,
+          "fraction_valid_target_pixels_retained": 0.9808944265351189
+        }
+      }
+    },
+    "val": {
+      "invalid_image_area_fraction": {
+        "count": 76,
+        "min": 0.0002545497214147287,
+        "p10": 0.0011705502059108528,
+        "median": 0.0056123955305232565,
+        "p90": 0.022150084029796513,
+        "max": 0.05852561773255814,
+        "mean": 0.009418576262718022
+      },
+      "classes": {
+        "metal": {
+          "all_gt_target_pixels": 5817838,
+          "nir_invalid_gt_target_pixels": 121426,
+          "nir_valid_gt_target_pixels": 5696412,
+          "retained_component_pixels": 5433680,
+          "nir_invalid_fraction_of_gt_target_pixels": 0.020871327114986703,
+          "valid_target_pixels_excluded_by_component_filters": 262732,
+          "fraction_valid_target_pixels_retained": 0.9538776338509223
+        },
+        "plastic": {
+          "all_gt_target_pixels": 161493,
+          "nir_invalid_gt_target_pixels": 1827,
+          "nir_valid_gt_target_pixels": 159666,
+          "retained_component_pixels": 131414,
+          "nir_invalid_fraction_of_gt_target_pixels": 0.011313183853170107,
+          "valid_target_pixels_excluded_by_component_filters": 28252,
+          "fraction_valid_target_pixels_retained": 0.8230556286247541
+        },
+        "wood": {
+          "all_gt_target_pixels": 2849513,
+          "nir_invalid_gt_target_pixels": 30287,
+          "nir_valid_gt_target_pixels": 2819226,
+          "retained_component_pixels": 2750602,
+          "nir_invalid_fraction_of_gt_target_pixels": 0.010628833769138797,
+          "valid_target_pixels_excluded_by_component_filters": 68624,
+          "fraction_valid_target_pixels_retained": 0.9756585672805231
+        }
+      }
+    }
+  },
+  "classification_crop_distribution": {
+    "manifest_path": "C:\\Users\\Dhwanit Kriplani\\OneDrive\\Documents\\ChatGPT\\btech project\\nir_material\\mcubes_crops\\manifest.json",
+    "config": {
+      "max_per_class_per_source": 4,
+      "purity": 0.9,
+      "seed": 42,
+      "candidate_sides": [
+        256,
+        192,
+        128,
+        96,
+        64,
+        48
+      ],
+      "minimum_validity": 0.99,
+      "left_offset": 192,
+      "scene_purge": true
+    },
+    "counts": {
+      "train": {
+        "metal": 588,
+        "plastic": 50,
+        "wood": 293
+      },
+      "val": {
+        "metal": 186,
+        "plastic": 11,
+        "wood": 96
+      },
+      "test": {
+        "metal": 250,
+        "plastic": 57,
+        "wood": 148
+      }
+    },
+    "purity": {
+      "count": 1679,
+      "min": 0.9000244140625,
+      "p10": 0.9066826714409723,
+      "median": 0.943359375,
+      "p90": 1.0,
+      "max": 1.0,
+      "mean": 0.9487536068542007
+    },
+    "central_purity": {
+      "count": 1679,
+      "min": 0.9005102040816326,
+      "p10": 0.9327168367346939,
+      "median": 0.9784580498866213,
+      "p90": 1.0,
+      "max": 1.0,
+      "mean": 0.972875905638834
+    },
+    "crop_vs_detection_fact": "Classification crops require >=90% material purity and >=99% validity; detector connected-component boxes allow >=10% fill. Classifier scores/accuracy do not establish localization quality."
+  },
+  "known_quality_blockers": [
+    {
+      "priority": "high",
+      "fact": "The target labels are connected semantic material regions, not whole physical-object instances.",
+      "implication": "They do not supervise the requested whole-object boxes, regardless of model capacity."
+    },
+    {
+      "priority": "high",
+      "fact": "Stored held-out detector metrics have low AP/recall for both modalities; no new evaluation was performed.",
+      "implication": "Current saved evidence does not support reliable localization."
+    },
+    {
+      "priority": "high",
+      "fact": "3939 connected-region boxes in 212 training frames; 31.28% have a short side below16 pixels at640 and59.15% have component fill below50%.",
+      "implication": "Small-region detail and semantic-component geometry limit this task. Component fill does not establish the total same-class pixel purity of a rectangle."
+    }
+  ],
+  "hypotheses_not_proven_by_this_audit": [
+    "Increasing model capacity and resolution may improve validation localization; causal gain must be measured.",
+    "Applying NIR validity to unmasked RGB may create RGB supervision omissions; their visibility/impact needs a manual validation-only annotation review.",
+    "Same-material connected regions can merge touching objects or fragment one object; instance IDs are unavailable in these derived labels, so the number of such physical-instance errors is not measured.",
+    "Scene-prefix separation does not establish independent physical-object identities, sites or camera domains."
+  ],
+  "recommended_validation_only_experiments": [
+    {
+      "priority": 1,
+      "experiment": "YOLO11s at 1024 input, same GT, scene-purged train/val, same AP50/AP50-95 and class metrics.",
+      "reason": "31.28% of train boxes have a shorter side below16px at640; increased resolution directly tests loss of small-region detail, and larger capacity tests underfitting.",
+      "controls": "Preserve current baselines and frozen test split; choose only by validation. If resources allow, separate architecture and resolution in a small controlled ablation.",
+      "limit": "This improves the region-box task only; it cannot make non-instance GT into whole-object GT."
+    },
+    {
+      "priority": 2,
+      "experiment": "Separate annotation experiment: manually review train/val whole-object boxes and RGB NIR-invalid GT regions; create a versioned task-correct label subset before retraining.",
+      "reason": "Low-fill fragmented semantic boxes and shared NIR validity are directly visible in preparation code/data.",
+      "controls": "Do not overwrite current labels or compare AP across changed GT as if the metric task were identical. Keep official test untouched until a final protocol is fixed."
+    }
+  ],
+  "geometric_rescaling_estimates_train": {
+    "640": {
+      "median_short_side_pixels": 22.325581395348838,
+      "fraction_short_side_below16": 0.31276973851231277,
+      "fraction_short_side_below32": 0.6603198781416603,
+      "assumption": "single-frame letterbox scaling; training augmentation can change effective sizes"
+    },
+    "1024": {
+      "median_short_side_pixels": 35.72093023255814,
+      "fraction_short_side_below16": 0.10637217567910637,
+      "fraction_short_side_below32": 0.44884488448844884,
+      "assumption": "single-frame letterbox scaling; training augmentation can change effective sizes"
+    }
+  }
+}
