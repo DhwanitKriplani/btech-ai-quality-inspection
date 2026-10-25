@@ -1,0 +1,80 @@
+READY ENTRY POINT: START_INSPECTION.bat
+Is menu se photo, live camera, NIR photo, dual camera, ya included demo choose karo.
+Menu option5 mein included training examples par software demo chalta hai.
+
+ACTUAL LIMITS
+Material boxes abhi weak/experimental hain: RGB box mAP50=11.76%, NIR=9.86%.
+Inhe reliable material sorting mat samajhna. Camera data se improvement chahiye.
+Independent detector/classifier disagree karein toh screen par Material check: unsure aata hai.
+Scratch model ka result alag hai: aluminium RGB test par box mAP50=99.23%.
+Tumhare CCTV camera ki testing abhi nahi hui hai.
+
+MATERIAL + SCRATCH / DEFECT INSPECTION
+
+1. RGB PHOTO
+   RUN_PHOTO.bat par photo drag-drop karo, ya double-click karke photo ka
+   full path paste karo. Spaces wale paths supported hain.
+   Material boxes/classification aur aluminium defect boxes/masks chalenge.
+   Annotated results aur report outputs\rgb_photo mein milenge.
+
+2. NIR CAMERA PHOTO
+   Actual NIR camera image ke liye RUN_NIR_PHOTO.bat use karo.
+   Is mode mein NIR material model chalega; RGB defect model skip hoga.
+   Results outputs\nir_photo mein milenge.
+
+3. LIVE CAMERA (sirf jab tum launch karo)
+   RUN_WEBCAM.bat: RGB camera 0.
+   RUN_DUAL_CAMERA.bat: RGB camera 0 aur NIR camera 1.
+   Camera window mein Q ya Esc se band karo.
+   Dual-camera views alag panes hain; calibration/registration nahi hai.
+   Ek camera ki box position ko doosre camera par sahi mat samajhna.
+   Agar camera indices alag hain, neeche wali command mein 0/1 badal do.
+
+PYTHON SETUP
+   Launchers folder ke andar, parent, aur grandparent mein .venv_gpu pehle
+   aur .venv baad mein dhoondhte hain. Activation zaroori nahi hai.
+   GPU available aur usable hua toh --device auto usko choose karega.
+   Naye computer par SETUP_WINDOWS.bat se Python 3.11 CPU setup banao.
+   Ye setup NVIDIA/CUDA installer nahi hai. Internet chahiye.
+
+POWERSHELL COMMANDS (is integrated_inspection folder ke andar se)
+   Actual project ka GPU environment do levels upar ho toh:
+
+   ..\..\.venv_gpu\Scripts\python.exe .\run_inspection.py --source "C:\photos\sample image.jpg" --input-mode rgb --output ".\outputs\rgb_photo" --show --device auto
+
+   ..\..\.venv_gpu\Scripts\python.exe .\run_inspection.py --source "C:\photos\nir sample.png" --input-mode nir --output ".\outputs\nir_photo" --show --device auto
+
+   ..\..\.venv_gpu\Scripts\python.exe .\run_inspection.py --source 0 --nir-source 1 --output ".\outputs\dual_camera" --show --device auto
+
+   Portable CPU setup use kar rahe ho toh Python path ko
+   .\.venv\Scripts\python.exe se replace karo.
+
+BOXES AUR SCORES KA MATLAB
+   Material boxes material-labelled regions hain; zaroori nahi ki har box
+   ek poora alag object ho. Ek object mein multiple materials ho sakte hain.
+   Defect boxes/masks trained scratch, corner defect, side defect regions hain.
+   Black Marker class default mein physical defect ke roop mein nahi dikhayi jati.
+   Classification score measured accuracy nahi hai; softmax scores uncalibrated hain.
+   NIR material classification mein plastic weak hai; camera samples par check karo.
+   Public NIR training ka score tumhare NIR camera ki guaranteed accuracy nahi hai.
+   RGB defect model aluminium surface images par trained hai. Plastic/wood ya NIR
+   images par defect performance verified nahi hai.
+
+MEASURED DEFECT TEST RESULT
+   Existing aluminium defect model ko untouched 50 RGB test images par evaluate kiya:
+   all 4 classes, marker included in these averages:
+   boxes: mAP50 99.23%, mAP50-95 77.54%;
+   masks: mAP50 98.11%, mAP50-95 57.04%.
+   Ye mAP values hain, image classification accuracy nahi.
+   Full evidence evaluation\defects_test_metrics.json mein hai.
+   Material detector ke results alag measured report se dekho;
+   yahan koi future material detection score claim nahi kiya gaya hai.
+
+REQUIRED MODEL FILES
+   models\material_rgb_detector.pt
+   models\material_nir_detector.pt
+   models\defect_detector.pt
+   models\material_rgb_classifier.pt
+   models\material_nir_classifier.pt
+
+   Poora integrated_inspection folder saath rakho; sirf BAT file move mat karo.

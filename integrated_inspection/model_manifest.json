@@ -1,0 +1,73 @@
+{
+  "application": "Integrated material and aluminium surface inspection",
+  "entrypoint": "START_INSPECTION.bat",
+  "models": {
+    "defect_detector": {
+      "file": "models/defect_detector.pt",
+      "bytes": 6625501,
+      "sha256": "1f933564d6a3d40f6cb80e344d01bcc8ff119d9c98bd3ede99bf054fd25a8225"
+    },
+    "material_nir_classifier": {
+      "file": "models/material_nir_classifier.pt",
+      "bytes": 45079051,
+      "sha256": "42117b643aa24709c388a5299eed8cf8301689d32f5ae6566db287518952079f"
+    },
+    "material_nir_detector": {
+      "file": "models/material_nir_detector.pt",
+      "bytes": 5459333,
+      "sha256": "421554c18ce30a1c1c29856d37d1a3b3dabd5f91b373a523bef3551274174372"
+    },
+    "material_rgb_classifier": {
+      "file": "models/material_rgb_classifier.pt",
+      "bytes": 44791819,
+      "sha256": "01b4e67f6bd5d811e9f8aab137bb677284eb3f0f77d5ddd00db08e3caf5d46d3"
+    },
+    "material_rgb_detector": {
+      "file": "models/material_rgb_detector.pt",
+      "bytes": 5459333,
+      "sha256": "2d39e7d58a59d107ff2a96cb0f90f238c942b35161609cbef4d5c11ffab2a969"
+    }
+  },
+  "input_modes": {
+    "rgb": [
+      "RGB material region detector",
+      "per-region FMD material classifier",
+      "aluminium scratch/corner/side segmenter"
+    ],
+    "nir": [
+      "NIR material region detector",
+      "per-region MCubeS NIR classifier"
+    ],
+    "dual": "both stages in separate unregistered panes"
+  },
+  "rgb_material_detection_test": {
+    "precision": 0.24331598496176676,
+    "recall": 0.16854817978356518,
+    "map50": 0.11757025663951742,
+    "map50_95": 0.05482806505872572,
+    "per_class_map50_95": {
+      "metal": 0.10829649298265501,
+      "plastic": 0.02268651066342674,
+      "wood": 0.033501191530095474
+    }
+  },
+  "nir_material_detection_test": {
+    "precision": 0.2242390938159439,
+    "recall": 0.15637282817031473,
+    "map50": 0.09855854191191667,
+    "map50_95": 0.04897389010759259,
+    "per_class_map50_95": {
+      "metal": 0.09694110787860193,
+      "plastic": 0.008416203183770746,
+      "wood": 0.041564359260405095
+    }
+  },
+  "defect_evaluation_file": "evaluation/defects_test_metrics.json",
+  "material_detection_quality": "weak experimental models; misses and false regions expected",
+  "material_classifier_consistency": "independent classifier can disagree with detector; raw estimates preserved, view marks unsure",
+  "camera_hardware_tested": false,
+  "cross_sensor_calibration": false,
+  "pretrained_detection_source": "Ultralytics YOLO26n then actual MCubeS finetuning40epochs permodality",
+  "source_dataset": "https://github.com/kyotovision-public/multimodal-material-segmentation",
+  "defect_scope": "RGB aluminium only; Black Marker excluded bydefault, optional flag"
+}

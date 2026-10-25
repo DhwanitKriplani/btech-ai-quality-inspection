@@ -1,0 +1,6 @@
+# Install matching CPU torch/torchvision first; see SETUP_WINDOWS.bat.
+numpy
+pillow
+pyarrow
+opencv-python
+requests

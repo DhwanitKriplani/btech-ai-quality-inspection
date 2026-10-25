@@ -1,0 +1,44 @@
+{
+  "preferred_model": "best_nir.pt",
+  "training_domain": "mcubes_nir_material_crops",
+  "nir_model_included": true,
+  "classes": [
+    "metal",
+    "plastic",
+    "wood"
+  ],
+  "public_nir_test_accuracy": 0.6835165023803711,
+  "macro_f1": 0.5187476873397827,
+  "test_crops": 455,
+  "correct_predictions": 311,
+  "per_class": {
+    "metal": {
+      "precision": 0.6907894611358643,
+      "recall": 0.8399999737739563,
+      "f1": 0.7581227421760559,
+      "support": 250
+    },
+    "plastic": {
+      "precision": 0.21052631735801697,
+      "recall": 0.07017543911933899,
+      "f1": 0.10526315867900848,
+      "support": 57
+    },
+    "wood": {
+      "precision": 0.7348484992980957,
+      "recall": 0.6554054021835327,
+      "f1": 0.6928571462631226,
+      "support": 148
+    }
+  },
+  "best_epoch": 1,
+  "train_crops": 931,
+  "validation_crops": 293,
+  "dataset_source": "https://github.com/kyotovision-public/multimodal-material-segmentation",
+  "source_camera": "FLIR GS3-U3-41C6NIR-C; 750 nm long-pass",
+  "user_camera_description": "3.6mm IR 1080P CCTV camera module",
+  "user_camera_tested": false,
+  "limitation": "Plastic recall is weak:4/57; performance on user CCTV camera remains unknown.",
+  "checkpoint_sha256": "42117b643aa24709c388a5299eed8cf8301689d32f5ae6566db287518952079f",
+  "fmd_baseline_preserved": "best_material.pt"
+}

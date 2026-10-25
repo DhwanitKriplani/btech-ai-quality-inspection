@@ -1,0 +1,45 @@
+{
+  "status": "passed",
+  "scope": "Functional smoke on TRAIN examples, not accuracy validation",
+  "device": "CUDA0 RTX4060 GPU environment",
+  "all_five_models_exercised": true,
+  "rgb_scratch_photo": {
+    "report": "C:\\Users\\Dhwanit Kriplani\\OneDrive\\Documents\\ChatGPT\\btech project\\integrated_inspection\\outputs\\smoke_rgb\\inspection_20261025_021203_378939.json",
+    "material_regions": 3,
+    "scratch_score": 0.715006411075592,
+    "scratch_class_id": 3,
+    "scratch_mask_points": 8,
+    "markers_default_excluded": true,
+    "classifier_disagreements_retained": 3,
+    "final_annotation_report": "C:\\Users\\Dhwanit Kriplani\\OneDrive\\Documents\\ChatGPT\\btech project\\integrated_inspection\\outputs\\smoke_rgb_final\\inspection_20261025_021355_017264.json",
+    "final_annotation_preview": "C:\\Users\\Dhwanit Kriplani\\OneDrive\\Documents\\ChatGPT\\btech project\\integrated_inspection\\outputs\\smoke_rgb_final\\inspection_20261025_021355_017264.jpg",
+    "annotation_only_change_raw_predictions_unchanged": true
+  },
+  "dual_photo": {
+    "report": "C:\\Users\\Dhwanit Kriplani\\OneDrive\\Documents\\ChatGPT\\btech project\\integrated_inspection\\outputs\\smoke_dual\\inspection_20261025_021211_370751.json",
+    "rgb_material_regions": 5,
+    "nir_material_regions": 4,
+    "registration": "not_registered",
+    "cross_sensor_associations": null,
+    "nir_rgb_defects_disabled": true,
+    "original_coordinates_preserved": true
+  },
+  "rgb_video": {
+    "frames_reported": 2,
+    "frames_decoded": 2,
+    "video": "C:\\Users\\Dhwanit Kriplani\\OneDrive\\Documents\\ChatGPT\\btech project\\integrated_inspection\\outputs\\smoke_rgb_video\\inspection_20261025_021258_844750.mp4",
+    "defect_counts": [
+      1,
+      1
+    ]
+  },
+  "camera_accessed": false,
+  "heldout_test_evaluated": false,
+  "cpu_fallback": {
+    "status": "passed",
+    "report": "C:\\Users\\Dhwanit Kriplani\\OneDrive\\Documents\\ChatGPT\\btech project\\integrated_inspection\\outputs\\smoke_rgb_cpu\\inspection_20261025_021402_916318.json",
+    "material_regions": 3,
+    "scratch_count": 1,
+    "scratch_score": 0.714876115322113
+  }
+}

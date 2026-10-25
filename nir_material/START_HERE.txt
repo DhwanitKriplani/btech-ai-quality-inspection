@@ -1,0 +1,45 @@
+READY NIR MATERIAL MODEL
+
+best_nir.pt = actual public MCubeS NIR images se trained metal/plastic/wood model.
+Is model ki public test accuracy68.35% hai (311/455 correct).
+Plastic abhi kamzor hai:57 test crops mein4 correct. Model perfect nahi hai.
+Tumhare CCTV camera ke samples par abhi testing nahi hui hai; woh baad mein karenge.
+Poore measured results MODEL_REPORT.md mein hain.
+
+ABHI MODEL CHALANE KE LIYE
+1. Photo ka path hai: PREDICT_PHOTO.bat kholo, path paste karke Enter.
+   Ya photo ko PREDICT_PHOTO.bat par drag-and-drop karo.
+   Result outputs/prediction.jpg aur prediction.json mein aayega.
+2. Live demo: RUN_WEBCAM.bat. Ye camera0 kholta hai (abhi laptop webcam).
+   Q/Escape se close karo. Centre square model ka input area hai, detection box nahi.
+3. External camera index 1 ke liye PowerShell:
+   .\RUN_WEBCAM.bat 1
+
+NIR MODEL KO DOBARA TRAIN KARNA HO
+TRAIN_PUBLIC_NIR.bat same public-data pipeline chalata hai. Pehli baar approx800MB
+NIR data download hoga. Model already trained hai, abhi dobara train karna zaroori nahi.
+Model ke original test scenes training se alag rakhe gaye hain.
+
+TUMHARE CAMERA PAR BAAD MEIN TEST/TRAINING
+Camera ko Windows-compatible video interface se connect karo. CCTV output ke
+hisaab se suitable USB video-capture interface lag sakta hai. Abhi Windows mein
+sirf Integrated Webcam detected tha, external CCTV capture device nahi.
+Pehle sample images par PREDICT_PHOTO.bat se output check kar sakte ho.
+Further camera-specific training ke liye COLLECT_IR_SAMPLES.bat labelled images
+save karta hai:1=metal,2=plastic,3=wood,Space=save,Q=close.
+Train/val/test mein alag objects aur capture sessions use karo.
+TRAIN_NIR.bat un actual camera images se naya best_nir.pt banata hai.
+Aisa karne se current public NIR model overwrite hoga; pehle uski copy rakh lena.
+
+NAYA COMPUTER
+Python3.11 install karke SETUP_WINDOWS.bat chalao. Trained model prediction
+ke waqt model weights dobara download nahi honge.
+
+PREDICTION KO SAMAJHO
+Screen par percentage softmax score hai, measured accuracy nahi.
+Model sirf metal/plastic/wood mein se ek chunta hai; unknown detector nahi hai.
+Metal class aluminium ko alag confirm nahi karti.
+Single normalized8-bit image frames supported.16-bit/raw/spectral sources ko
+sensor ke hisaab se fixed normalization chahiye; silent clipping nahi hoti.
+Purana best_material.pt bhi rakha hai; woh grayscale FMD baseline hai (74.45%).
+Launchers actual best_nir.pt ko prefer karte hain.

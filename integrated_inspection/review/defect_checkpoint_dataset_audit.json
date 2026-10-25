@@ -1,0 +1,221 @@
+{
+  "dataset_root": "C:\\Users\\Dhwanit Kriplani\\Downloads\\Alumunium Defect Detection.v4i.yolov8",
+  "class_ids": {
+    "0": "Black Marker",
+    "1": "Corner Defect",
+    "2": "Side Defect",
+    "3": "scratch"
+  },
+  "dataset_splits": {
+    "train": {
+      "images": 335,
+      "label_files": 335,
+      "instances_by_class": {
+        "Black Marker": 279,
+        "Corner Defect": 142,
+        "Side Defect": 70,
+        "scratch": 345
+      },
+      "images_by_class": {
+        "Black Marker": 245,
+        "Corner Defect": 142,
+        "Side Defect": 70,
+        "scratch": 300
+      },
+      "geometry_counts": {
+        "polygon": 836
+      },
+      "empty_labels": 0,
+      "missing_labels": 0,
+      "bad_annotation_rows": 0
+    },
+    "valid": {
+      "images": 95,
+      "label_files": 95,
+      "instances_by_class": {
+        "Black Marker": 80,
+        "Corner Defect": 40,
+        "Side Defect": 20,
+        "scratch": 95
+      },
+      "images_by_class": {
+        "Black Marker": 70,
+        "Corner Defect": 40,
+        "Side Defect": 20,
+        "scratch": 85
+      },
+      "geometry_counts": {
+        "polygon": 235
+      },
+      "empty_labels": 0,
+      "missing_labels": 0,
+      "bad_annotation_rows": 0
+    },
+    "test": {
+      "images": 50,
+      "label_files": 50,
+      "instances_by_class": {
+        "Black Marker": 42,
+        "Corner Defect": 17,
+        "Side Defect": 10,
+        "scratch": 53
+      },
+      "images_by_class": {
+        "Black Marker": 35,
+        "Corner Defect": 17,
+        "Side Defect": 10,
+        "scratch": 45
+      },
+      "geometry_counts": {
+        "polygon": 122
+      },
+      "empty_labels": 0,
+      "missing_labels": 0,
+      "bad_annotation_rows": 0
+    }
+  },
+  "training_rows": 100,
+  "last_epoch": 100.0,
+  "best_row_by_box_plus_mask_map95": {
+    "epoch": 95.0,
+    "time": 11910.3,
+    "train/box_loss": 0.82528,
+    "train/seg_loss": 0.91385,
+    "train/cls_loss": 0.33971,
+    "train/l1_loss": 0.00376,
+    "train/sem_loss": 0.22201,
+    "metrics/precision(B)": 0.97991,
+    "metrics/recall(B)": 0.98913,
+    "metrics/mAP50(B)": 0.99177,
+    "metrics/mAP50-95(B)": 0.76717,
+    "metrics/precision(M)": 0.96171,
+    "metrics/recall(M)": 0.97089,
+    "metrics/mAP50(M)": 0.97227,
+    "metrics/mAP50-95(M)": 0.54287,
+    "val/box_loss": 0.8131,
+    "val/seg_loss": 1.0308,
+    "val/cls_loss": 0.30858,
+    "val/l1_loss": 0.00418,
+    "val/sem_loss": 0.0,
+    "lr/pg0": 8.675e-05,
+    "lr/pg1": 8.675e-05,
+    "lr/pg2": 8.675e-05,
+    "box_plus_mask_map95": 1.3100399999999999
+  },
+  "best_mask_map95_epoch": 79.0,
+  "best_box_map95_epoch": 98.0,
+  "train_smoke_candidates": [
+    {
+      "path": "C:\\Users\\Dhwanit Kriplani\\Downloads\\Alumunium Defect Detection.v4i.yolov8\\train\\images\\WIN_20230622_12_51_27_Pro_jpg.rf.70e8269bfc20d260cfe05562db8c4ff8.jpg",
+      "label_path": "C:\\Users\\Dhwanit Kriplani\\Downloads\\Alumunium Defect Detection.v4i.yolov8\\train\\labels\\WIN_20230622_12_51_27_Pro_jpg.rf.70e8269bfc20d260cfe05562db8c4ff8.txt",
+      "classes": {
+        "Black Marker": 1,
+        "scratch": 1
+      },
+      "size": [
+        640,
+        640
+      ],
+      "mode": "RGB"
+    },
+    {
+      "path": "C:\\Users\\Dhwanit Kriplani\\Downloads\\Alumunium Defect Detection.v4i.yolov8\\train\\images\\WIN_20230622_12_51_58_Pro_jpg.rf.5b60add7639f8bfb54fa9f4216295880.jpg",
+      "label_path": "C:\\Users\\Dhwanit Kriplani\\Downloads\\Alumunium Defect Detection.v4i.yolov8\\train\\labels\\WIN_20230622_12_51_58_Pro_jpg.rf.5b60add7639f8bfb54fa9f4216295880.txt",
+      "classes": {
+        "Black Marker": 1,
+        "scratch": 1
+      },
+      "size": [
+        640,
+        640
+      ],
+      "mode": "RGB"
+    },
+    {
+      "path": "C:\\Users\\Dhwanit Kriplani\\Downloads\\Alumunium Defect Detection.v4i.yolov8\\train\\images\\WIN_20230622_13_13_01_Pro_jpg.rf.d60553d99d5d20b53f4804f7bcc2e83b.jpg",
+      "label_path": "C:\\Users\\Dhwanit Kriplani\\Downloads\\Alumunium Defect Detection.v4i.yolov8\\train\\labels\\WIN_20230622_13_13_01_Pro_jpg.rf.d60553d99d5d20b53f4804f7bcc2e83b.txt",
+      "classes": {
+        "Black Marker": 1,
+        "scratch": 1,
+        "Corner Defect": 1
+      },
+      "size": [
+        640,
+        640
+      ],
+      "mode": "RGB"
+    }
+  ],
+  "checkpoint": {
+    "path": "C:\\Users\\Dhwanit Kriplani\\Downloads\\cv_model_starter\\cv_model_starter\\runs\\segment\\runs\\segment\\aluminium_defects\\weights\\best.pt",
+    "bytes": 6625501,
+    "task": "segment",
+    "names": {
+      "0": "Black Marker",
+      "1": "Corner Defect",
+      "2": "Side Defect",
+      "3": "scratch"
+    },
+    "ckpt_epoch": -1,
+    "ckpt_date": "2026-10-24T05:00:39.718418+05:30",
+    "ultralytics_version": "8.4.184",
+    "training_model": "yolo26n-seg.pt",
+    "training_data": "C:\\Users\\Dhwanit Kriplani\\Downloads\\cv_model_starter\\cv_model_starter\\rgb_defects\\dataset.yaml",
+    "train_metrics": {
+      "metrics/precision(B)": 0.97991,
+      "metrics/recall(B)": 0.98913,
+      "metrics/mAP50(B)": 0.99177,
+      "metrics/mAP50-95(B)": 0.76717,
+      "metrics/precision(M)": 0.96171,
+      "metrics/recall(M)": 0.97089,
+      "metrics/mAP50(M)": 0.97227,
+      "metrics/mAP50-95(M)": 0.54287,
+      "val/box_loss": 0.8131,
+      "val/seg_loss": 1.0308,
+      "val/cls_loss": 0.30858,
+      "val/l1_loss": 0.00418,
+      "val/sem_loss": 0.0,
+      "fitness": 1.31004
+    },
+    "stripped_optimizer": true
+  },
+  "train_interface_smoke": {
+    "source_split": "train",
+    "source": "C:\\Users\\Dhwanit Kriplani\\Downloads\\Alumunium Defect Detection.v4i.yolov8\\train\\images\\WIN_20230622_12_51_27_Pro_jpg.rf.70e8269bfc20d260cfe05562db8c4ff8.jpg",
+    "confidence_threshold": 0.25,
+    "task": "segment",
+    "names": {
+      "0": "Black Marker",
+      "1": "Corner Defect",
+      "2": "Side Defect",
+      "3": "scratch"
+    },
+    "boxes_shape": [
+      2,
+      6
+    ],
+    "box_columns": "xyxy, confidence, class_id",
+    "predicted_class_ids": [
+      0,
+      3
+    ],
+    "predicted_class_names": [
+      "Black Marker",
+      "scratch"
+    ],
+    "confidence": [
+      0.8859718441963196,
+      0.714876115322113
+    ],
+    "masks_shape": [
+      2,
+      640,
+      640
+    ],
+    "mask_polygon_counts": [
+      26,
+      27
+    ],
+    "note": "TRAIN-image interface smoke only; not held-out evaluation or accuracy measurement"
+  }
+}

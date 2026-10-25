@@ -1,0 +1,23 @@
+﻿.venv/
+venv/
+__pycache__/
+*.pyc
+.env
+.vscode/
+runs/
+**/runs/
+datasets/
+data/
+*.parquet
+*.zip
+*.onnx
+*.tflite
+*.pt
+*.pth
+.DS_Store
+Thumbs.db
+
+# Generated outputs and training logs
+integrated_inspection/outputs/
+nir_material/outputs/
+*.log

@@ -1,0 +1,22 @@
+ULTRALYTICS DATASET FORMAT
+
+Your dataset root should look like:
+my_dataset/
+  images/
+    train/  (training photos)
+    val/    (validation photos)
+  labels/
+    train/  (one .txt annotation file per image)
+    val/    (one .txt annotation file per image)
+
+For object detection, each annotation row is:
+class_id x_center y_center width height
+All coordinates are normalized from 0 to 1. Class IDs:
+0 Scratch
+1 Black Marker
+2 Corner Defect
+3 Side Defect
+
+For segmentation, each row uses class_id followed by normalized polygon x y pairs. The annotation format must match the chosen task. Do not mix detection boxes and segmentation polygons in the same dataset.
+
+Important: do not use test images as training images. Images from the same physical part/session should ideally stay in one split to reduce leakage.

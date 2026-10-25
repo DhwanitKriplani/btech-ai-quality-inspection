@@ -1,0 +1,117 @@
+{
+  "evaluated_at_utc": "2026-10-24T20:23:13.609288+00:00",
+  "checkpoint": "C:\\Users\\Dhwanit Kriplani\\Downloads\\cv_model_starter\\cv_model_starter\\runs\\segment\\runs\\segment\\aluminium_defects\\weights\\best.pt",
+  "checkpoint_sha256": "1f933564d6a3d40f6cb80e344d01bcc8ff119d9c98bd3ede99bf054fd25a8225",
+  "data_config": "C:\\Users\\Dhwanit Kriplani\\Downloads\\cv_model_starter\\cv_model_starter\\rgb_defects\\dataset.yaml",
+  "data_config_sha256": "e6bd5ad7d4873bccae41387c5845e202b7442e730b1130c697e05c0e25d6f881",
+  "test_image_root": "C:\\Users\\Dhwanit Kriplani\\Downloads\\Alumunium Defect Detection.v4i.yolov8\\test\\images",
+  "test_image_count": 50,
+  "task": "instance_segmentation",
+  "domain": "RGB aluminium surface defect images",
+  "scope": "Held-out performance on this dataset; not verified on NIR, plastic, wood, or a new camera",
+  "all_four_classes_included": true,
+  "class_0_note": "Black Marker is a marker class and is not counted as a physical defect label",
+  "box": {
+    "mAP50": 0.992311320754717,
+    "mAP50_95": 0.7754385449989074
+  },
+  "mask": {
+    "mAP50": 0.9810707084589861,
+    "mAP50_95": 0.5704358178110589
+  },
+  "per_class": [
+    {
+      "class_id": 0,
+      "name": "Black Marker",
+      "role": "marker (not a defect)",
+      "box": {
+        "precision": 0.9957587518036727,
+        "recall": 1.0,
+        "AP50": 0.995,
+        "AP50_95": 0.8739300887021475
+      },
+      "mask": {
+        "precision": 0.9720502100940615,
+        "recall": 0.9761904761904762,
+        "AP50": 0.9630952380952383,
+        "AP50_95": 0.6361719543593944
+      }
+    },
+    {
+      "class_id": 1,
+      "name": "Corner Defect",
+      "role": "defect",
+      "box": {
+        "precision": 0.9650723324236408,
+        "recall": 1.0,
+        "AP50": 0.995,
+        "AP50_95": 0.5961352495543673
+      },
+      "mask": {
+        "precision": 0.9650723324236408,
+        "recall": 1.0,
+        "AP50": 0.995,
+        "AP50_95": 0.4352110294117647
+      }
+    },
+    {
+      "class_id": 2,
+      "name": "Side Defect",
+      "role": "defect",
+      "box": {
+        "precision": 0.9745641510707191,
+        "recall": 1.0,
+        "AP50": 0.995,
+        "AP50_95": 0.8516666666666668
+      },
+      "mask": {
+        "precision": 0.9745641510707191,
+        "recall": 1.0,
+        "AP50": 0.995,
+        "AP50_95": 0.6541071428571429
+      }
+    },
+    {
+      "class_id": 3,
+      "name": "scratch",
+      "role": "defect",
+      "box": {
+        "precision": 1.0,
+        "recall": 0.9231039418464708,
+        "AP50": 0.9842452830188679,
+        "AP50_95": 0.7800221750724482
+      },
+      "mask": {
+        "precision": 0.9795597401861662,
+        "recall": 0.9042360173181689,
+        "AP50": 0.971187595740706,
+        "AP50_95": 0.5562531446159332
+      }
+    }
+  ],
+  "ultralytics_results": {
+    "metrics/precision(B)": 0.9838488088245081,
+    "metrics/recall(B)": 0.9807759854616177,
+    "metrics/mAP50(B)": 0.992311320754717,
+    "metrics/mAP50-95(B)": 0.7754385449989074,
+    "metrics/precision(M)": 0.9728116084436469,
+    "metrics/recall(M)": 0.9701066233771614,
+    "metrics/mAP50(M)": 0.9810707084589861,
+    "metrics/mAP50-95(M)": 0.5704358178110589,
+    "fitness": 1.3458743628099663
+  },
+  "validation_settings": {
+    "split": "test",
+    "device": "cpu",
+    "workers": 0,
+    "batch": 4,
+    "imgsz": 640,
+    "plots": false,
+    "save_json": false,
+    "threshold_policy": "Unmodified Ultralytics validation defaults; no test tuning"
+  },
+  "source_image_label_hashes_unchanged": true,
+  "suppressed_source_cache_writes": [
+    "C:\\Users\\Dhwanit Kriplani\\Downloads\\Alumunium Defect Detection.v4i.yolov8\\test\\labels.cache"
+  ]
+}

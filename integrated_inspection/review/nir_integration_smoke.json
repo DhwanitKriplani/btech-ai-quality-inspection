@@ -1,0 +1,18 @@
+{
+  "status": "passed",
+  "scope": "actual trained NIR weights on a TRAIN source frame; functional smoke, not accuracy evaluation",
+  "photo_source": "C:\\Users\\Dhwanit Kriplani\\OneDrive\\Documents\\ChatGPT\\btech project\\integrated_inspection\\material_detection_data\\train\\images\\outscene1208_10_0000000000.png",
+  "photo_material_regions": 4,
+  "photo_region_boxes_match_direct_yolo": true,
+  "photo_classifier_per_region": true,
+  "nir_rgb_defects_disabled": true,
+  "video_frames_requested": 2,
+  "video_frames_reported": 2,
+  "video_frames_decoded": 2,
+  "photo_report": "C:\\Users\\Dhwanit Kriplani\\OneDrive\\Documents\\ChatGPT\\btech project\\integrated_inspection\\outputs\\smoke_nir\\inspection_20261025_020635_275785.json",
+  "video_file": "C:\\Users\\Dhwanit Kriplani\\OneDrive\\Documents\\ChatGPT\\btech project\\integrated_inspection\\outputs\\smoke_nir_video\\inspection_20261025_020731_533186.mp4",
+  "camera_accessed": false,
+  "heldout_test_evaluated": false,
+  "annotation_preview": "C:\\Users\\Dhwanit Kriplani\\OneDrive\\Documents\\ChatGPT\\btech project\\integrated_inspection\\outputs\\smoke_nir_after_annotation\\inspection_20261025_020852_486489.jpg",
+  "annotation_only_fix_predictions_unchanged": true
+}
